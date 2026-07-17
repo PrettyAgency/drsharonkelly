@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; -webkit-font-smoothing: antialiased; }
+    a { color: #16263A; text-decoration: none; }
+    a:hover { color: #AD8A54; }
+    ::selection { background: #E7D9BE; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Work Sans', sans-serif; color: #24282D; background: #FBF8F2; width: 100%; overflow-x: hidden;">
+
+  <!-- TOP UTILITY BAR -->
+  <div style="background: #FBF8F2; border-bottom: 1px solid rgba(22,38,58,0.1); font-size: 12.5px;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 9px {{ topBarSidePad }}; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 22px;">
+        <a href="tel:0738317866" style="color: #24282D;">07 3831 7866</a>
+        <a href="mailto:admin@drsharonkellyent.com.au" style="color: #24282D; display: {{ topBarEmailDisplay }};">admin@drsharonkellyent.com.au</a>
+      </div>
+      <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="color: #AD8A54; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 11.5px;">Book Appointment →</a>
+    </div>
+  </div>
+
+  <!-- STICKY HEADER -->
+  <header style="position: sticky; top: 0; z-index: 40; background: rgba(251,248,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(22,38,58,0.12);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: {{ headerPadding }}; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="./Homepage Concept 2.dc.html" style="display: flex; align-items: center; gap: 13px;">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18.5" stroke="#AD8A54" stroke-width="1.4"></circle>
+          <path d="M12 21c0-6.5 4-11 8-11s8 4.5 8 11-4 11-8 11" stroke="#16263A" stroke-width="2" stroke-linecap="round" fill="none"></path>
+        </svg>
+        <span>
+          <span style="display: block; font-family: 'Newsreader', serif; font-style: italic; font-size: 19px; font-weight: 600; color: #16263A; line-height: 1;">Sharon Kelly</span>
+          <span style="display: block; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-top: 2px;">ENT Surgeon, Brisbane</span>
+        </span>
+      </a>
+      <nav style="display: {{ navDisplay }}; align-items: center; gap: 32px;">
+        <a href="./Homepage Concept 2.dc.html#about" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">About</a>
+        <button onclick="{{ toggleMega }}" style="display: flex; align-items: center; gap: 6px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 500; color: #AD8A54; white-space: nowrap;">
+          Conditions &amp; Treatments
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="transition: transform 0.3s ease; transform: {{ megaChevronTransform }};"><path d="M1 1L5 5L9 1" stroke="#AD8A54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+        <a href="./Homepage Concept 2.dc.html#faq" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">Patient Info</a>
+        <a href="./Homepage Concept 2.dc.html#locations" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">Locations</a>
+        <a href="./Homepage Concept 2.dc.html#final-cta" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">Contact</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="display: {{ headerCtaDisplay }}; background: #16263A; color: #FBF8F2; padding: 12px 27px; font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #AD8A54;">Book Appointment</a>
+        <button onclick="{{ toggleMenu }}" aria-label="Toggle menu" style="display: {{ hamburgerDisplay }}; align-items: center; gap: 10px; background: none; border: 1px solid rgba(22,38,58,0.25); border-radius: 2px; cursor: pointer; flex-shrink: 0; padding: 10px 16px;">
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #16263A;">{{ menuTriggerLabel }}</span>
+          <span style="position: relative; width: 18px; height: 14px;">
+            <span style="position: absolute; left: 0; top: 0; width: 18px; height: 2px; border-radius: 1px; background: #16263A; transition: transform 0.35s ease, opacity 0.35s ease; transform: {{ hamburgerBar1Transform }};"></span>
+            <span style="position: absolute; left: 0; top: 6px; width: 18px; height: 2px; border-radius: 1px; background: #16263A; transition: opacity 0.35s ease; opacity: {{ hamburgerBar2Opacity }};"></span>
+            <span style="position: absolute; left: 0; top: 12px; width: 18px; height: 2px; border-radius: 1px; background: #16263A; transition: transform 0.35s ease, opacity 0.35s ease; transform: {{ hamburgerBar3Transform }};"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <!-- MEGA MENU DROPDOWN (desktop) -->
+    <div style="display: {{ megaWrapDisplay }}; position: absolute; top: 100%; left: 0; right: 0;">
+      <div style="max-width: 1320px; margin: 0 auto; padding: 0 32px;">
+        <div style="background: #FBF8F2; box-shadow: 0 28px 46px rgba(22,38,58,0.18); border-top: 2px solid #AD8A54; opacity: {{ megaOpacity }}; transform: {{ megaTransform }}; transform-origin: top center; transition: opacity 0.35s ease, transform 0.35s ease; pointer-events: {{ megaPanelPointerEvents }};">
+          <div style="padding: 40px 40px 24px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px;">
+            <sc-for list="{{ megaCategories }}" as="cat" hint-placeholder-count="5">
+              <div>
+                <a href="{{ cat.href }}" onclick="{{ closeMega }}" style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; font-weight: 600; color: #16263A; display: block; margin-bottom: 14px;">{{ cat.title }}</a>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                  <sc-for list="{{ cat.items }}" as="it" hint-placeholder-count="3">
+                    <a href="{{ it.href }}" onclick="{{ closeMega }}" style="font-size: 13.5px; color: #6B655C;">{{ it.label }}</a>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="border-top: 1px solid rgba(22,38,58,0.1); padding: 18px 40px; display: flex; justify-content: flex-end;">
+            <a href="./Conditions and Treatments Concept 2.dc.html" onclick="{{ closeMega }}" style="font-size: 13.5px; font-weight: 600; color: #16263A;">View All Conditions &amp; Treatments →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MEGA MENU BACKDROP -->
+  <div onclick="{{ closeMega }}" style="display: {{ megaBackdropDisplay }}; position: fixed; inset: 0; background: rgba(22,38,58,0.3); opacity: {{ megaBackdropOpacity }}; pointer-events: {{ megaPanelPointerEvents }}; transition: opacity 0.35s ease; z-index: 35;"></div>
+
+  <!-- FULL-SCREEN MORPHING MENU -->
+  <div style="position: fixed; inset: 0; z-index: 60; background: #16263A; clip-path: circle({{ menuClipRadius }} at calc(100% - 48px) 48px); transition: clip-path 0.75s cubic-bezier(0.83,0,0.17,1); pointer-events: {{ menuPointerEvents }};">
+    <div style="max-width: 1320px; height: 100%; margin: 0 auto; padding: 32px 32px 40px; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <a href="./Homepage Concept 2.dc.html" onclick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 12px;">
+          <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18.5" stroke="#AD8A54" stroke-width="1.4"></circle>
+            <path d="M12 21c0-6.5 4-11 8-11s8 4.5 8 11-4 11-8 11" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" fill="none"></path>
+          </svg>
+          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 19px; font-weight: 600; color: #FBF8F2;">Sharon Kelly</span>
+        </a>
+        <button onclick="{{ closeMenu }}" aria-label="Close menu" style="width: 44px; height: 44px; background: none; border: 1px solid rgba(251,248,242,0.3); border-radius: 50%; cursor: pointer; position: relative;">
+          <span style="position: absolute; top: 50%; left: 50%; width: 18px; height: 2px; background: #FBF8F2; transform: translate(-50%, -50%) rotate(45deg);"></span>
+          <span style="position: absolute; top: 50%; left: 50%; width: 18px; height: 2px; background: #FBF8F2; transform: translate(-50%, -50%) rotate(-45deg);"></span>
+        </button>
+      </div>
+      <nav style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; overflow-y: auto;">
+        <sc-for list="{{ megaNavItems }}" as="item" hint-placeholder-count="5">
+          <a href="{{ item.href }}" onclick="{{ closeMenu }}" style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ megaNavFontSize }}; font-weight: 600; color: #FBF8F2; padding: 14px 0; border-bottom: 1px solid rgba(251,248,242,0.14); opacity: {{ menuItemOpacity }}; transform: {{ menuItemTransform }}; transition: opacity 0.5s ease {{ item.delay }}, transform 0.5s ease {{ item.delay }};" style-hover="color: #E7D9BE;">{{ item.label }}</a>
+        </sc-for>
+      </nav>
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; padding-top: 24px; border-top: 1px solid rgba(251,248,242,0.15);">
+        <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+          <a href="tel:0738317866" style="color: #FBF8F2; font-size: 14.5px;">07 3831 7866</a>
+          <a href="mailto:admin@drsharonkellyent.com.au" style="color: #FBF8F2; font-size: 14.5px;">admin@drsharonkellyent.com.au</a>
+        </div>
+        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" onclick="{{ closeMenu }}" style="background: #AD8A54; color: #16263A; padding: 14px 30px; font-size: 14px; font-weight: 600;">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section style="background: #F1ECE1; padding: {{ pageHeaderPadding }};">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="font-size: 13px; margin-bottom: 20px;">
+        <a href="./Homepage Concept 2.dc.html" style="color: #AD8A54;">Home</a>
+        <span style="color: #9A9488; padding: 0 8px;">/</span>
+        <span style="color: #24282D;">Conditions &amp; Treatments</span>
+      </div>
+      <div style="font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 18px;">What Can Dr Kelly Help With?</div>
+      <h1 style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ pageHeadingSize }}; font-weight: 500; margin: 0 0 20px; line-height: 1.15; max-width: 760px; color: #16263A;">Conditions &amp; Treatments</h1>
+      <p style="font-size: 16.5px; line-height: 1.75; color: #55524B; max-width: 620px; margin: 0;">Dr Kelly provides comprehensive ear, nose and throat care for adults and children — organised below by the areas she treats most often.</p>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
+    <section id="{{ cat.slug }}" data-screen-label="{{ cat.title }}" style="background: {{ cat.bg }}; padding: {{ categoryPadding }}; scroll-margin-top: 90px;">
+      <div style="max-width: 1320px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: {{ categoryHeaderGrid }}; gap: 32px; align-items: center; margin-bottom: 40px;">
+          <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ categoryHeadingSize }}; font-weight: 600; color: #16263A; margin: 0;">{{ cat.title }}</h2>
+          <img src="{{ cat.image }}" alt="{{ cat.title }}" style="width: 100%; height: {{ categoryImageHeight }}; object-fit: cover; display: block;">
+        </div>
+        <div style="display: grid; grid-template-columns: {{ twoColGrid }}; gap: 48px;">
+          <div>
+            <div style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 20px;">Conditions We Treat</div>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <sc-for list="{{ cat.conditions }}" as="c" hint-placeholder-count="4">
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="width: 5px; height: 5px; border-radius: 50%; background: #AD8A54; margin-top: 9px; flex-shrink: 0;"></span>
+                  <span style="font-size: 15px; line-height: 1.6; color: #24282D;">{{ c }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 20px;">Procedures</div>
+            <div style="display: flex; flex-direction: column;">
+              <sc-for list="{{ cat.procedures }}" as="p" hint-placeholder-count="3">
+                <a href="{{ p.href }}" style="background: #FBF8F2; padding: 18px 4px; border-bottom: 1px solid rgba(22,38,58,0.12); display: flex; align-items: center; justify-content: space-between; gap: 16px; color: {{ p.textColor }};">
+                  <span style="font-size: 15px; font-weight: 500;">{{ p.name }}</span>
+                  <sc-if value="{{ p.hasLink }}"><span style="font-size: 13px; font-weight: 600; color: #16263A; flex-shrink: 0;">Read More →</span></sc-if>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-for>
+
+  <!-- FINAL CTA -->
+  <section style="background: #16263A; padding: {{ ctaPadding }}; text-align: center;">
+    <div style="max-width: 640px; margin: 0 auto;">
+      <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ ctaHeadingSize }}; font-weight: 500; color: #FBF8F2; margin: 0 0 20px; line-height: 1.3;">Book an appointment with Dr Sharon Kelly</h2>
+      <p style="font-size: 16px; line-height: 1.7; color: #C7C1B4; margin: 0 0 40px;">Not sure which condition or treatment applies to you? Get in touch and Dr Kelly's team will help guide you.</p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;">
+        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="background: #AD8A54; color: #16263A; padding: 17px 38px; font-size: 14.5px; font-weight: 600;" style-hover="background: #E7D9BE;">Book Appointment</a>
+        <a href="./Homepage Concept 2.dc.html#final-cta" style="color: #FBF8F2; padding: 17px 8px; font-size: 14.5px; font-weight: 600; border-bottom: 1px solid rgba(251,248,242,0.4);">Contact the Practice</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #101C2B; padding: {{ footerPadding }};">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: {{ footerGridCols }}; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(251,248,242,0.1);">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="18.5" stroke="#AD8A54" stroke-width="1.4"></circle>
+              <path d="M12 21c0-6.5 4-11 8-11s8 4.5 8 11-4 11-8 11" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" fill="none"></path>
+            </svg>
+            <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; font-weight: 600; color: #FBF8F2;">Sharon Kelly</span>
+          </div>
+          <p style="font-size: 13.5px; line-height: 1.7; color: #8A8578; max-width: 260px; margin: 0;">Ear, Nose and Throat Specialist Surgeon, providing specialist ENT care across Brisbane for over twenty years.</p>
+        </div>
+        <div>
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6558; font-weight: 600; margin-bottom: 20px;">Explore</div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
+              <a href="{{ item.href }}" style="font-size: 14px; color: #C7C1B4;">{{ item.label }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6558; font-weight: 600; margin-bottom: 20px;">Contact</div>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #C7C1B4;">
+            <a href="tel:0738317866" style="color: #C7C1B4;">07 3831 7866</a>
+            <a href="mailto:admin@drsharonkellyent.com.au" style="color: #C7C1B4;">admin@drsharonkellyent.com.au</a>
+            <span>Watkins Medical Centre, Spring Hill</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6558; font-weight: 600; margin-bottom: 20px;">Recognition</div>
+          <img src="https://www.sharonkelly-ent.com/media/jchhivd5/fracslogo.jpg" alt="Fellow of the Royal Australasian College of Surgeons" style="height: 46px; width: auto; background: #FBF8F2; padding: 6px 10px;">
+        </div>
+      </div>
+      <div style="padding-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <span style="font-size: 12.5px; color: #6B6558;">© 2026 Dr Sharon Kelly. All rights reserved.</span>
+        <div style="display: flex; gap: 24px;">
+          <a href="#" style="font-size: 12.5px; color: #6B6558;">Terms</a>
+          <a href="#" style="font-size: 12.5px; color: #6B6558;">Privacy</a>
+          <a href="#" style="font-size: 12.5px; color: #6B6558;">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { windowWidth: typeof window !== "undefined" ? window.innerWidth : 1320, mobileMenuOpen: false, megaOpen: false };
+
+  componentDidMount() {
+    this.handleResize = () => this.setState({ windowWidth: window.innerWidth });
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
+  renderVals() {
+    const hotdocUrl = "https://www.hotdoc.com.au/medical-centres/spring-hill-QLD-4000/dr-sharon-kelly/doctors?wp=w_lightbox";
+    const w = this.state.windowWidth;
+    const isMobile = w < 640;
+    const isNarrow = w < 900;
+    const isCompactNav = w < 1150;
+
+    const toggleMenu = () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen }));
+    const closeMenu = () => this.setState({ mobileMenuOpen: false });
+    const toggleMega = () => this.setState(s => ({ megaOpen: !s.megaOpen }));
+    const closeMega = () => this.setState({ megaOpen: false });
+    const megaOpenState = this.state.megaOpen;
+    const megaWrapDisplay = isCompactNav ? "none" : "block";
+    const megaBackdropDisplay = isCompactNav ? "none" : "block";
+    const megaOpacity = megaOpenState ? 1 : 0;
+    const megaTransform = megaOpenState ? "scaleY(1) translateY(0)" : "scaleY(0.97) translateY(-8px)";
+    const megaPanelPointerEvents = megaOpenState ? "auto" : "none";
+    const megaBackdropOpacity = megaOpenState ? 1 : 0;
+    const megaChevronTransform = megaOpenState ? "rotate(180deg)" : "rotate(0deg)";
+
+    const linkProc = (name, href) => ({ label: name, href: href || "./Conditions and Treatments Concept 2.dc.html" });
+    const megaCategories = [
+      { title: "Ear", href: "./Conditions and Treatments Concept 2.dc.html#ear", items: [linkProc("Grommets", "./Grommets Concept 2.dc.html"), linkProc("Mastoidectomy"), linkProc("Myringoplasty")] },
+      { title: "Nose & Sinus", href: "./Conditions and Treatments Concept 2.dc.html#nose-sinus", items: [linkProc("Functional Endoscopic Sinus Surgery"), linkProc("Septoplasty"), linkProc("Turbinate Reduction")] },
+      { title: "Throat", href: "./Conditions and Treatments Concept 2.dc.html#throat", items: [linkProc("Tonsillectomy"), linkProc("UPPP Sleep Surgery")] },
+      { title: "Head & Neck", href: "./Conditions and Treatments Concept 2.dc.html#head-neck", items: [linkProc("Parotidectomy"), linkProc("Salivary Gland Surgery")] },
+      { title: "Paediatric ENT", href: "./Conditions and Treatments Concept 2.dc.html#paediatric", items: [linkProc("Adenotonsillectomy"), linkProc("Grommets", "./Grommets Concept 2.dc.html"), linkProc("Tonsillectomy")] }
+    ];
+
+    const topBarSidePad = isMobile ? "20px" : "32px";
+    const topBarEmailDisplay = isMobile ? "none" : "inline";
+    const headerPadding = isMobile ? "14px 20px" : "16px 32px";
+    const headerCtaDisplay = isMobile ? "none" : "inline-block";
+    const navDisplay = isCompactNav ? "none" : "flex";
+    const hamburgerDisplay = isCompactNav ? "flex" : "none";
+
+    const menuOpen = this.state.mobileMenuOpen;
+    const menuTriggerLabel = menuOpen ? "Close" : "Menu";
+    const menuClipRadius = menuOpen ? "2400px" : "0px";
+    const menuPointerEvents = menuOpen ? "auto" : "none";
+    const menuItemOpacity = menuOpen ? 1 : 0;
+    const menuItemTransform = menuOpen ? "translateY(0)" : "translateY(18px)";
+    const megaNavFontSize = isMobile ? "28px" : isNarrow ? "38px" : "48px";
+    const hamburgerBar1Transform = menuOpen ? "translateY(6px) rotate(45deg)" : "none";
+    const hamburgerBar2Opacity = menuOpen ? 0 : 1;
+    const hamburgerBar3Transform = menuOpen ? "translateY(-6px) rotate(-45deg)" : "none";
+
+    const pageHeaderPadding = isMobile ? "48px 20px 40px" : "72px 32px 56px";
+    const pageHeadingSize = isMobile ? "34px" : "48px";
+    const categoryPadding = isMobile ? "48px 20px" : "72px 32px";
+    const categoryHeadingSize = isMobile ? "24px" : "28px";
+    const twoColGrid = isNarrow ? "1fr" : "0.9fr 1.1fr";
+    const categoryHeaderGrid = isMobile ? "1fr" : "1fr 320px";
+    const categoryImageHeight = isMobile ? "160px" : "120px";
+    const ctaPadding = isMobile ? "56px 20px" : "100px 32px";
+    const ctaHeadingSize = isMobile ? "27px" : "38px";
+    const footerGridCols = isMobile ? "1fr" : isNarrow ? "repeat(2, 1fr)" : "1.4fr 1fr 1fr 1fr";
+    const footerPadding = isMobile ? "48px 20px 24px" : "64px 32px 32px";
+
+    const navItems = [
+      { label: "About Dr Kelly", href: "./Homepage Concept 2.dc.html#about" },
+      { label: "Conditions & Treatments", href: "./Conditions and Treatments Concept 2.dc.html" },
+      { label: "Patient Information", href: "./Homepage Concept 2.dc.html#faq" },
+      { label: "Locations", href: "./Homepage Concept 2.dc.html#locations" },
+      { label: "Contact", href: "./Homepage Concept 2.dc.html#final-cta" }
+    ];
+    const megaNavItems = navItems.map((item, i) => ({ ...item, delay: (i * 60) + "ms" }));
+
+    const proc = (name, href) => ({ name, href: href || "#", hasLink: !!href, textColor: href ? "#24282D" : "#9A9488" });
+
+    const categories = [
+      {
+        title: "Ear",
+        slug: "ear",
+        bg: "#FBF8F2",
+        image: "uploads/s2 (1).jpg",
+        conditions: ["Ear infections", "Hearing loss", "Eardrum perforation", "Tinnitus", "Bone anchored hearing aids"],
+        procedures: [proc("Grommets", "./Grommets Concept 2.dc.html"), proc("Mastoidectomy"), proc("Myringoplasty")]
+      },
+      {
+        title: "Nose & Sinus",
+        slug: "nose-sinus",
+        bg: "#F1ECE1",
+        image: "uploads/uri_ifs___M_StjVAVBUCcEcxQuMLRIHbZ-65Z858plOBV4-pOXBEtY.jpg",
+        conditions: ["Sinusitis and nasal allergies", "Nasal injuries and deformities", "Blocked nose and allergies", "Nose bleeds"],
+        procedures: [proc("Functional Endoscopic Sinus Surgery"), proc("Septoplasty"), proc("Turbinate Reduction")]
+      },
+      {
+        title: "Throat",
+        slug: "throat",
+        bg: "#FBF8F2",
+        image: "uploads/uri_ifs___M_LV7OT1ytb6u4dafr6PSwxZ8bOOlIgbgmSO6tIbHMexM.jpg",
+        conditions: ["Tonsillitis and other causes of sore throat", "Voice, larynx and swallowing problems", "Snoring and sleep apnoea"],
+        procedures: [proc("Tonsillectomy"), proc("Uvulopalatopharyngoplasty (UPPP) Sleep Surgery")]
+      },
+      {
+        title: "Head & Neck",
+        slug: "head-neck",
+        bg: "#F1ECE1",
+        image: "uploads/images-9.jpg",
+        conditions: ["Cancer involving the throat, mouth or nose", "Stones in the submandibular or parotid ducts", "Infection and tumours of the salivary glands"],
+        procedures: [proc("Parotidectomy"), proc("Salivary Gland Surgery")]
+      },
+      {
+        title: "Paediatric ENT",
+        slug: "paediatric",
+        bg: "#FBF8F2",
+        image: "uploads/images-5.jpg",
+        conditions: ["Tonsillitis and adenoids", "Ear infections", "Eardrum perforation", "Blocked nose and allergies", "Prominent ears", "Nose bleeds", "Snoring", "Tongue tie"],
+        procedures: [proc("Adenotonsillectomy"), proc("Grommets", "./Grommets Concept 2.dc.html"), proc("Tonsillectomy"), proc("Turbinate Reduction")]
+      }
+    ];
+
+    return {
+      hotdocUrl,
+      navItems,
+      megaNavItems,
+      categories,
+      toggleMega,
+      closeMega,
+      megaWrapDisplay,
+      megaBackdropDisplay,
+      megaOpacity,
+      megaTransform,
+      megaPanelPointerEvents,
+      megaBackdropOpacity,
+      megaChevronTransform,
+      megaCategories,
+      topBarSidePad,
+      topBarEmailDisplay,
+      headerPadding,
+      headerCtaDisplay,
+      navDisplay,
+      hamburgerDisplay,
+      menuTriggerLabel,
+      menuClipRadius,
+      menuPointerEvents,
+      menuItemOpacity,
+      menuItemTransform,
+      megaNavFontSize,
+      hamburgerBar1Transform,
+      hamburgerBar2Opacity,
+      hamburgerBar3Transform,
+      pageHeaderPadding,
+      pageHeadingSize,
+      categoryPadding,
+      categoryHeadingSize,
+      twoColGrid,
+      categoryHeaderGrid,
+      categoryImageHeight,
+      ctaPadding,
+      ctaHeadingSize,
+      footerGridCols,
+      footerPadding
+    };
+  }
+}
+</script>
+</body>
+</html>

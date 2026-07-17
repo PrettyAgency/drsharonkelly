@@ -90,7 +90,7 @@
             <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(22,38,58,0.88), rgba(22,38,58,0.35));"></div>
             <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 40px;">
               <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 19px; color: #FBF8F2;">Explore every condition we treat</span>
-              <a href="./Conditions and Treatments.dc.html" onclick="{{ closeMega }}" style="font-size: 13px; font-weight: 600; color: #E7D9BE; white-space: nowrap; border-bottom: 1px solid #AD8A54; padding-bottom: 2px;">View All →</a>
+              <a href="./Conditions and Treatments Concept 2.dc.html" onclick="{{ closeMega }}" style="font-size: 13px; font-weight: 600; color: #E7D9BE; white-space: nowrap; border-bottom: 1px solid #AD8A54; padding-bottom: 2px;">View All →</a>
             </div>
           </div>
         </div>
@@ -206,7 +206,7 @@
             </div>
             <div style="padding: 26px 26px 30px; display: flex; flex-direction: column; gap: 16px; flex: 1;">
               <p style="font-size: 14px; line-height: 1.7; color: #55524B; margin: 0; flex: 1;">{{ card.desc }}</p>
-              <a href="./Conditions and Treatments.dc.html" style="font-size: 13px; font-weight: 600; color: #16263A; border-bottom: 1px solid #AD8A54; align-self: flex-start; padding-bottom: 2px;">Learn More</a>
+              <a href="./Conditions and Treatments Concept 2.dc.html" style="font-size: 13px; font-weight: 600; color: #16263A; border-bottom: 1px solid #AD8A54; align-self: flex-start; padding-bottom: 2px;">Learn More</a>
             </div>
           </div>
         </sc-for>
@@ -414,13 +414,13 @@ class Component extends DCLogic {
     const megaBackdropOpacity = megaOpenState ? 1 : 0;
     const megaChevronTransform = megaOpenState ? "rotate(180deg)" : "rotate(0deg)";
 
-    const linkProc = (name, href) => ({ label: name, href: href || "./Conditions and Treatments.dc.html" });
+    const linkProc = (name, href) => ({ label: name, href: href || "./Conditions and Treatments Concept 2.dc.html" });
     const megaCategories = [
-      { title: "Ear", href: "./Conditions and Treatments.dc.html#ear", items: [linkProc("Grommets", "./Grommets.dc.html"), linkProc("Mastoidectomy"), linkProc("Myringoplasty")] },
-      { title: "Nose & Sinus", href: "./Conditions and Treatments.dc.html#nose-sinus", items: [linkProc("Functional Endoscopic Sinus Surgery"), linkProc("Septoplasty"), linkProc("Turbinate Reduction")] },
-      { title: "Throat", href: "./Conditions and Treatments.dc.html#throat", items: [linkProc("Tonsillectomy"), linkProc("UPPP Sleep Surgery")] },
-      { title: "Head & Neck", href: "./Conditions and Treatments.dc.html#head-neck", items: [linkProc("Parotidectomy"), linkProc("Salivary Gland Surgery")] },
-      { title: "Paediatric ENT", href: "./Conditions and Treatments.dc.html#paediatric", items: [linkProc("Adenotonsillectomy"), linkProc("Grommets", "./Grommets.dc.html"), linkProc("Tonsillectomy")] }
+      { title: "Ear", href: "./Conditions and Treatments Concept 2.dc.html#ear", items: [linkProc("Grommets", "./Grommets Concept 2.dc.html"), linkProc("Mastoidectomy"), linkProc("Myringoplasty")] },
+      { title: "Nose & Sinus", href: "./Conditions and Treatments Concept 2.dc.html#nose-sinus", items: [linkProc("Functional Endoscopic Sinus Surgery"), linkProc("Septoplasty"), linkProc("Turbinate Reduction")] },
+      { title: "Throat", href: "./Conditions and Treatments Concept 2.dc.html#throat", items: [linkProc("Tonsillectomy"), linkProc("UPPP Sleep Surgery")] },
+      { title: "Head & Neck", href: "./Conditions and Treatments Concept 2.dc.html#head-neck", items: [linkProc("Parotidectomy"), linkProc("Salivary Gland Surgery")] },
+      { title: "Paediatric ENT", href: "./Conditions and Treatments Concept 2.dc.html#paediatric", items: [linkProc("Adenotonsillectomy"), linkProc("Grommets", "./Grommets Concept 2.dc.html"), linkProc("Tonsillectomy")] }
     ];
 
     const topBarSidePad = isMobile ? "20px" : "32px";
@@ -473,7 +473,7 @@ class Component extends DCLogic {
 
     const navItems = [
       { label: "About Dr Kelly", href: "#about" },
-      { label: "Conditions & Treatments", href: "./Conditions and Treatments.dc.html" },
+      { label: "Conditions & Treatments", href: "./Conditions and Treatments Concept 2.dc.html" },
       { label: "Patient Information", href: "#faq" },
       { label: "Locations", href: "#locations" },
       { label: "Contact", href: "#final-cta" }
