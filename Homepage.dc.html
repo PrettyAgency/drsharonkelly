@@ -9,84 +9,89 @@
 <x-dc>
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="./image-slot.js"></script>
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; -webkit-font-smoothing: antialiased; }
-    a { color: #1F6D78; text-decoration: none; }
-    a:hover { color: #164e56; }
-    ::selection { background: #BFD9E2; }
+    a { color: #16263A; text-decoration: none; }
+    a:hover { color: #AD8A54; }
+    ::selection { background: #E7D9BE; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(14px);} to { opacity: 1; transform: translateY(0);} }
   </style>
 </helmet>
 
-<div style="font-family: 'Inter', sans-serif; color: #263238; background: #FFFFFF; width: 100%; overflow-x: hidden;">
+<div style="font-family: 'Work Sans', sans-serif; color: #24282D; background: #FBF8F2; width: 100%; overflow-x: hidden;">
 
-  <!-- TOP CONTACT BAR -->
-  <div style="background: #1F6D78; color: #FFFFFF; font-size: 13px;">
-    <div style="max-width: 1280px; margin: 0 auto; padding: 8px {{ topBarSidePad }}; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-      <div style="display: flex; align-items: center; gap: 20px;">
-        <a href="tel:0738317866" style="color: #FFFFFF; opacity: 0.92;">07 3831 7866</a>
-        <a href="mailto:admin@drsharonkellyent.com.au" style="color: #FFFFFF; opacity: 0.92; display: {{ topBarEmailDisplay }};">admin@drsharonkellyent.com.au</a>
+  <!-- TOP UTILITY BAR -->
+  <div style="background: #FBF8F2; border-bottom: 1px solid rgba(22,38,58,0.1); font-size: 12.5px;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 9px {{ topBarSidePad }}; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 22px;">
+        <a href="tel:0738317866" style="color: #24282D; letter-spacing: 0.01em;">07 3831 7866</a>
+        <a href="mailto:admin@drsharonkellyent.com.au" style="color: #24282D; display: {{ topBarEmailDisplay }};">admin@drsharonkellyent.com.au</a>
       </div>
-      <div style="display: flex; align-items: center; gap: 20px;">
-        <a href="#final-cta" style="color: #FFFFFF; opacity: 0.92; display: {{ topBarReferDisplay }};">Referring Doctors: Refer a Patient</a>
-        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="color: #FFFFFF; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;">Book Appointment</a>
-      </div>
+      <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="color: #AD8A54; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 11.5px;">Book Appointment →</a>
     </div>
   </div>
 
   <!-- STICKY HEADER -->
-  <header style="position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #EDF2F3;">
-    <div style="max-width: 1280px; margin: 0 auto; padding: {{ headerPadding }}; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
-      <a href="#hero" style="display: flex; align-items: center; gap: 12px;">
-        <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-          <rect x="20" y="5" width="8" height="38" rx="4" fill="#1F6D78"></rect>
-          <path d="M5 24 C 11 13, 17 35, 24 24 C 31 13, 37 35, 43 24" stroke="#5E98B6" stroke-width="7" stroke-linecap="round" fill="none"></path>
+  <header style="position: sticky; top: 0; z-index: 40; background: rgba(251,248,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(22,38,58,0.12);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: {{ headerPadding }}; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="#hero" style="display: flex; align-items: center; gap: 13px;">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18.5" stroke="#AD8A54" stroke-width="1.4"></circle>
+          <path d="M12 21c0-6.5 4-11 8-11s8 4.5 8 11-4 11-8 11" stroke="#16263A" stroke-width="2" stroke-linecap="round" fill="none"></path>
         </svg>
-        <span style="font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600; color: #1F6D78; letter-spacing: 0.01em; white-space: nowrap;">Dr Sharon Kelly</span>
+        <span>
+          <span style="display: block; font-family: 'Newsreader', serif; font-style: italic; font-size: 19px; font-weight: 600; color: #16263A; line-height: 1;">Sharon Kelly</span>
+          <span style="display: block; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-top: 2px;">ENT Surgeon, Brisbane</span>
+        </span>
       </a>
-      <nav style="display: {{ navDisplay }}; align-items: center; gap: 30px;">
-        <a href="#about" style="font-size: 14.5px; font-weight: 500; color: #263238; white-space: nowrap;">About Dr Kelly</a>
-        <button onclick="{{ toggleMega }}" style="display: flex; align-items: center; gap: 6px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14.5px; font-weight: 500; color: #263238; white-space: nowrap;">
+      <nav style="display: {{ navDisplay }}; align-items: center; gap: 32px;">
+        <a href="#about" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">About</a>
+        <button onclick="{{ toggleMega }}" style="display: flex; align-items: center; gap: 6px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">
           Conditions &amp; Treatments
-          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="transition: transform 0.3s ease; transform: {{ megaChevronTransform }};"><path d="M1 1L5 5L9 1" stroke="#263238" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="transition: transform 0.3s ease; transform: {{ megaChevronTransform }};"><path d="M1 1L5 5L9 1" stroke="#24282D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </button>
-        <a href="#faq" style="font-size: 14.5px; font-weight: 500; color: #263238; white-space: nowrap;">Patient Information</a>
-        <a href="#locations" style="font-size: 14.5px; font-weight: 500; color: #263238; white-space: nowrap;">Locations</a>
-        <a href="#final-cta" style="font-size: 14.5px; font-weight: 500; color: #263238; white-space: nowrap;">Contact</a>
+        <a href="#faq" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">Patient Info</a>
+        <a href="#locations" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">Locations</a>
+        <a href="#final-cta" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">Contact</a>
       </nav>
       <div style="display: flex; align-items: center; gap: 14px;">
-        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="display: {{ headerCtaDisplay }}; background: #1F6D78; color: #FFFFFF; padding: 12px 26px; border-radius: 2px; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #164e56;">Book Appointment</a>
-        <button onclick="{{ toggleMenu }}" aria-label="Toggle menu" style="display: {{ hamburgerDisplay }}; align-items: center; gap: 10px; background: none; border: 1px solid #EDF2F3; border-radius: 2px; cursor: pointer; flex-shrink: 0; padding: 10px 16px;">
-          <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #1F6D78;">{{ menuTriggerLabel }}</span>
+        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="display: {{ headerCtaDisplay }}; background: #16263A; color: #FBF8F2; padding: 12px 27px; font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #AD8A54;">Book Appointment</a>
+        <button onclick="{{ toggleMenu }}" aria-label="Toggle menu" style="display: {{ hamburgerDisplay }}; align-items: center; gap: 10px; background: none; border: 1px solid rgba(22,38,58,0.25); border-radius: 2px; cursor: pointer; flex-shrink: 0; padding: 10px 16px;">
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #16263A;">{{ menuTriggerLabel }}</span>
           <span style="position: relative; width: 18px; height: 14px;">
-            <span style="position: absolute; left: 0; top: 0; width: 18px; height: 2px; border-radius: 1px; background: #1F6D78; transition: transform 0.35s ease, opacity 0.35s ease; transform: {{ hamburgerBar1Transform }};"></span>
-            <span style="position: absolute; left: 0; top: 6px; width: 18px; height: 2px; border-radius: 1px; background: #1F6D78; transition: opacity 0.35s ease; opacity: {{ hamburgerBar2Opacity }};"></span>
-            <span style="position: absolute; left: 0; top: 12px; width: 18px; height: 2px; border-radius: 1px; background: #1F6D78; transition: transform 0.35s ease, opacity 0.35s ease; transform: {{ hamburgerBar3Transform }};"></span>
+            <span style="position: absolute; left: 0; top: 0; width: 18px; height: 2px; border-radius: 1px; background: #16263A; transition: transform 0.35s ease, opacity 0.35s ease; transform: {{ hamburgerBar1Transform }};"></span>
+            <span style="position: absolute; left: 0; top: 6px; width: 18px; height: 2px; border-radius: 1px; background: #16263A; transition: opacity 0.35s ease; opacity: {{ hamburgerBar2Opacity }};"></span>
+            <span style="position: absolute; left: 0; top: 12px; width: 18px; height: 2px; border-radius: 1px; background: #16263A; transition: transform 0.35s ease, opacity 0.35s ease; transform: {{ hamburgerBar3Transform }};"></span>
           </span>
         </button>
       </div>
     </div>
     <!-- MEGA MENU DROPDOWN (desktop) -->
     <div style="display: {{ megaWrapDisplay }}; position: absolute; top: 100%; left: 0; right: 0;">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 32px;">
-        <div style="background: #FFFFFF; box-shadow: 0 24px 40px rgba(38,50,56,0.14); border-top: 2px solid #1F6D78; opacity: {{ megaOpacity }}; transform: {{ megaTransform }}; transform-origin: top center; transition: opacity 0.35s ease, transform 0.35s ease; pointer-events: {{ megaPanelPointerEvents }};">
+      <div style="max-width: 1320px; margin: 0 auto; padding: 0 32px;">
+        <div style="background: #FBF8F2; box-shadow: 0 28px 46px rgba(22,38,58,0.18); border-top: 2px solid #AD8A54; opacity: {{ megaOpacity }}; transform: {{ megaTransform }}; transform-origin: top center; transition: opacity 0.35s ease, transform 0.35s ease; pointer-events: {{ megaPanelPointerEvents }};">
           <div style="padding: 40px 40px 24px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px;">
             <sc-for list="{{ megaCategories }}" as="cat" hint-placeholder-count="5">
               <div>
-                <a href="{{ cat.href }}" onclick="{{ closeMega }}" style="font-family: 'Playfair Display', serif; font-size: 16.5px; font-weight: 600; color: #1F6D78; display: block; margin-bottom: 14px;">{{ cat.title }}</a>
+                <a href="{{ cat.href }}" onclick="{{ closeMega }}" style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; font-weight: 600; color: #16263A; display: block; margin-bottom: 14px;">{{ cat.title }}</a>
                 <div style="display: flex; flex-direction: column; gap: 10px;">
                   <sc-for list="{{ cat.items }}" as="it" hint-placeholder-count="3">
-                    <a href="{{ it.href }}" onclick="{{ closeMega }}" style="font-size: 13.5px; color: #45535a;">{{ it.label }}</a>
+                    <a href="{{ it.href }}" onclick="{{ closeMega }}" style="font-size: 13.5px; color: #6B655C;">{{ it.label }}</a>
                   </sc-for>
                 </div>
               </div>
             </sc-for>
           </div>
-          <div style="border-top: 1px solid #EDF2F3; padding: 18px 40px; display: flex; justify-content: flex-end;">
-            <a href="./Conditions and Treatments.dc.html" onclick="{{ closeMega }}" style="font-size: 13.5px; font-weight: 600; color: #1F6D78;">View All Conditions &amp; Treatments →</a>
+          <div style="position: relative; height: 120px; overflow: hidden; margin-top: 8px;">
+            <img src="uploads/uri_ifs___M_d3827ba5-d7cc-4966-9c28-301cc2ea565b.jpeg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(20%);">
+            <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(22,38,58,0.88), rgba(22,38,58,0.35));"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 40px;">
+              <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 19px; color: #FBF8F2;">Explore every condition we treat</span>
+              <a href="./Conditions and Treatments.dc.html" onclick="{{ closeMega }}" style="font-size: 13px; font-weight: 600; color: #E7D9BE; white-space: nowrap; border-bottom: 1px solid #AD8A54; padding-bottom: 2px;">View All →</a>
+            </div>
           </div>
         </div>
       </div>
@@ -94,124 +99,114 @@
   </header>
 
   <!-- MEGA MENU BACKDROP -->
-  <div onclick="{{ closeMega }}" style="display: {{ megaBackdropDisplay }}; position: fixed; inset: 0; background: rgba(38,50,56,0.25); opacity: {{ megaBackdropOpacity }}; pointer-events: {{ megaPanelPointerEvents }}; transition: opacity 0.35s ease; z-index: 35;"></div>
+  <div onclick="{{ closeMega }}" style="display: {{ megaBackdropDisplay }}; position: fixed; inset: 0; background: rgba(22,38,58,0.3); opacity: {{ megaBackdropOpacity }}; pointer-events: {{ megaPanelPointerEvents }}; transition: opacity 0.35s ease; z-index: 35;"></div>
 
-  <!-- FULL-SCREEN MORPHING MEGA MENU -->
-  <div style="position: fixed; inset: 0; z-index: 60; background: #1F6D78; clip-path: circle({{ menuClipRadius }} at calc(100% - 48px) 48px); transition: clip-path 0.75s cubic-bezier(0.83,0,0.17,1); pointer-events: {{ menuPointerEvents }};">
-    <div style="max-width: 1280px; height: 100%; margin: 0 auto; padding: 32px 32px 40px; display: flex; flex-direction: column;">
+  <!-- FULL-SCREEN MORPHING MENU -->
+  <div style="position: fixed; inset: 0; z-index: 60; background: #16263A; clip-path: circle({{ menuClipRadius }} at calc(100% - 48px) 48px); transition: clip-path 0.75s cubic-bezier(0.83,0,0.17,1); pointer-events: {{ menuPointerEvents }};">
+    <div style="max-width: 1320px; height: 100%; margin: 0 auto; padding: 32px 32px 40px; display: flex; flex-direction: column;">
       <div style="display: flex; align-items: center; justify-content: space-between;">
         <a href="#hero" onclick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 12px;">
-          <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-            <rect x="20" y="5" width="8" height="38" rx="4" fill="#FFFFFF"></rect>
-            <path d="M5 24 C 11 13, 17 35, 24 24 C 31 13, 37 35, 43 24" stroke="#BFD9E2" stroke-width="7" stroke-linecap="round" fill="none"></path>
+          <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18.5" stroke="#AD8A54" stroke-width="1.4"></circle>
+            <path d="M12 21c0-6.5 4-11 8-11s8 4.5 8 11-4 11-8 11" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" fill="none"></path>
           </svg>
-          <span style="font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600; color: #FFFFFF;">Dr Sharon Kelly</span>
+          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 19px; font-weight: 600; color: #FBF8F2;">Sharon Kelly</span>
         </a>
-        <button onclick="{{ closeMenu }}" aria-label="Close menu" style="width: 44px; height: 44px; background: none; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; cursor: pointer; position: relative;">
-          <span style="position: absolute; top: 50%; left: 50%; width: 18px; height: 2px; background: #FFFFFF; transform: translate(-50%, -50%) rotate(45deg);"></span>
-          <span style="position: absolute; top: 50%; left: 50%; width: 18px; height: 2px; background: #FFFFFF; transform: translate(-50%, -50%) rotate(-45deg);"></span>
+        <button onclick="{{ closeMenu }}" aria-label="Close menu" style="width: 44px; height: 44px; background: none; border: 1px solid rgba(251,248,242,0.3); border-radius: 50%; cursor: pointer; position: relative;">
+          <span style="position: absolute; top: 50%; left: 50%; width: 18px; height: 2px; background: #FBF8F2; transform: translate(-50%, -50%) rotate(45deg);"></span>
+          <span style="position: absolute; top: 50%; left: 50%; width: 18px; height: 2px; background: #FBF8F2; transform: translate(-50%, -50%) rotate(-45deg);"></span>
         </button>
       </div>
       <nav style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; overflow-y: auto;">
         <sc-for list="{{ megaNavItems }}" as="item" hint-placeholder-count="6">
-          <a href="{{ item.href }}" onclick="{{ closeMenu }}" style="font-family: 'Playfair Display', serif; font-size: {{ megaNavFontSize }}; font-weight: 600; color: #FFFFFF; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.14); opacity: {{ menuItemOpacity }}; transform: {{ menuItemTransform }}; transition: opacity 0.5s ease {{ item.delay }}, transform 0.5s ease {{ item.delay }};" style-hover="color: #BFD9E2;">{{ item.label }}</a>
+          <a href="{{ item.href }}" onclick="{{ closeMenu }}" style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ megaNavFontSize }}; font-weight: 600; color: #FBF8F2; padding: 14px 0; border-bottom: 1px solid rgba(251,248,242,0.14); opacity: {{ menuItemOpacity }}; transform: {{ menuItemTransform }}; transition: opacity 0.5s ease {{ item.delay }}, transform 0.5s ease {{ item.delay }};" style-hover="color: #E7D9BE;">{{ item.label }}</a>
         </sc-for>
       </nav>
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15);">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; padding-top: 24px; border-top: 1px solid rgba(251,248,242,0.15);">
         <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
-          <a href="tel:0738317866" style="color: #FFFFFF; font-size: 14.5px;">07 3831 7866</a>
-          <a href="mailto:admin@drsharonkellyent.com.au" style="color: #FFFFFF; font-size: 14.5px;">admin@drsharonkellyent.com.au</a>
+          <a href="tel:0738317866" style="color: #FBF8F2; font-size: 14.5px;">07 3831 7866</a>
+          <a href="mailto:admin@drsharonkellyent.com.au" style="color: #FBF8F2; font-size: 14.5px;">admin@drsharonkellyent.com.au</a>
         </div>
-        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" onclick="{{ closeMenu }}" style="background: #FFFFFF; color: #1F6D78; padding: 14px 30px; border-radius: 2px; font-size: 14px; font-weight: 600;">Book Appointment</a>
+        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" onclick="{{ closeMenu }}" style="background: #AD8A54; color: #16263A; padding: 14px 30px; font-size: 14px; font-weight: 600;">Book Appointment</a>
       </div>
     </div>
   </div>
 
   <!-- HERO -->
-  <section id="hero" data-screen-label="Hero" style="max-width: 1280px; margin: 0 auto; padding: {{ heroPadding }}; display: grid; grid-template-columns: {{ heroGridCols }}; gap: 56px; align-items: center;">
+  <section id="hero" data-screen-label="Hero" style="max-width: 1320px; margin: 0 auto; padding: {{ heroPadding }}; display: grid; grid-template-columns: {{ heroGridCols }}; gap: 56px; align-items: center;">
     <div style="animation: fadeUp 0.7s ease both;">
-      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 24px;">
-        <span style="width: 34px; height: 1px; background: #5E98B6;"></span>
-        <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E98B6; font-weight: 600;">Ear, Nose &amp; Throat Surgeon — Brisbane</span>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 26px;">
+        <span style="width: 34px; height: 1px; background: #AD8A54;"></span>
+        <span style="font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600;">Ear, Nose &amp; Throat Surgeon — Brisbane</span>
       </div>
-      <h1 style="font-family: 'Playfair Display', serif; font-size: {{ heroHeadingSize }}; line-height: 1.14; font-weight: 600; color: #263238; margin: 0 0 24px;">Specialist ENT care, guided by two decades of expertise</h1>
-      <p style="font-size: 17px; line-height: 1.7; color: #45535a; max-width: 480px; margin: 0 0 36px;">Dr Sharon Kelly provides comprehensive surgical and medical care for conditions of the ear, nose and throat — for adults and children across Brisbane.</p>
-      <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
-        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="background: #1F6D78; color: #FFFFFF; padding: 16px 32px; border-radius: 2px; font-size: 15px; font-weight: 600;" style-hover="background: #164e56;">Book Appointment</a>
-        <a href="#final-cta" style="color: #1F6D78; font-size: 15px; font-weight: 600; padding: 16px 8px; border-bottom: 1px solid #BFD9E2;">Contact the Practice →</a>
+      <h1 style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ heroHeadingSize }}; line-height: 1.1; font-weight: 500; color: #16263A; margin: 0 0 26px;">Specialist ENT care, guided by two decades of expertise</h1>
+      <p style="font-size: 17px; line-height: 1.7; color: #55524B; max-width: 460px; margin: 0 0 38px;">Dr Sharon Kelly provides comprehensive surgical and medical care for conditions of the ear, nose and throat — for adults and children across Brisbane.</p>
+      <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="background: #16263A; color: #FBF8F2; padding: 16px 34px; font-size: 14.5px; font-weight: 600;" style-hover="background: #AD8A54;">Book Appointment</a>
+        <a href="#final-cta" style="color: #16263A; font-size: 14.5px; font-weight: 600; padding: 16px 8px; border-bottom: 1px solid #AD8A54;">Contact the Practice →</a>
       </div>
     </div>
     <div style="position: relative;">
-      <div style="position: absolute; inset: 20px -20px -20px 20px; background: #F6F9FA; z-index: 0; display: {{ heroBackdropDisplay }};"></div>
-      <img src="https://www.sharonkelly-ent.com/media/kuodtvw3/sharon-kelly-ent.png" alt="Dr Sharon Kelly with a patient during an ENT consultation" style="position: relative; z-index: 1; width: 100%; height: {{ heroImageHeight }}; object-fit: cover; display: block;">
+      <div style="position: absolute; inset: -20px -20px 20px 20px; border: 1.5px solid #AD8A54; z-index: 0; display: {{ heroBackdropDisplay }};"></div>
+      <img src="uploads/images-7.jpg" alt="Dr Sharon Kelly examining a patient's ear during an ENT consultation" style="position: relative; z-index: 1; width: 100%; height: {{ heroImageHeight }}; object-fit: cover; display: block;">
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" data-screen-label="About" style="background: #F6F9FA; padding: {{ aboutPadding }};">
-    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: {{ aboutGridCols }}; gap: 56px; align-items: start;">
-      <div style="position: relative;">
-        <img src="https://www.sharonkelly-ent.com/media/eu3d2fp0/sharon-kelly.png" alt="Portrait of Dr Sharon Kelly" style="width: 100%; height: {{ aboutImageHeight }}; object-fit: cover; display: block; border-radius: 2px;">
-        <div style="position: absolute; bottom: -20px; left: -20px; background: #1F6D78; color: #FFFFFF; padding: 18px 24px;">
-          <div style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600;">20+ Years</div>
-          <div style="font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.85;">Practising ENT Surgery in Brisbane</div>
+  <!-- TRUST STRIP -->
+  <div style="background: #16263A; padding: {{ trustStripPadding }};">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: {{ trustStripJustify }}; gap: {{ trustStripGap }}; flex-wrap: wrap;">
+      <sc-for list="{{ trustItems }}" as="ti" hint-placeholder-count="4">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: #E7D9BE;">{{ ti.n }}</span>
+          <span style="font-size: 12.5px; letter-spacing: 0.04em; color: #C7C1B4;">{{ ti.label }}</span>
         </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" data-screen-label="About" style="padding: {{ aboutPadding }};">
+    <div style="max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: {{ aboutGridCols }}; gap: 64px; align-items: start;">
+      <div style="position: relative;">
+        <img src="https://www.sharonkelly-ent.com/media/eu3d2fp0/sharon-kelly.png" alt="Portrait of Dr Sharon Kelly" style="width: 100%; height: {{ aboutImageHeight }}; object-fit: cover; display: block;">
+        <img src="uploads/s2.jpg" alt="Hearing aid fitting" style="display: {{ aboutInsetDisplay }}; position: absolute; bottom: -32px; left: -40px; width: 190px; height: 140px; object-fit: cover; border: 6px solid #FBF8F2; box-shadow: 0 14px 30px rgba(22,38,58,0.2);">
       </div>
       <div style="padding-top: 8px;">
-        <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E98B6; font-weight: 600; margin-bottom: 16px;">About Dr Kelly</div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; margin: 0 0 24px; line-height: 1.25;">A specialist trusted by patients and referring doctors alike</h2>
-        <p style="font-size: 16px; line-height: 1.8; color: #45535a; margin: 0 0 20px;">After completing medical training at the University of Queensland, Dr Kelly undertook specialist training in Otolaryngology, Head and Neck Surgery and attained Fellowship of the Royal Australasian College of Surgeons in 1995.</p>
-        <p style="font-size: 16px; line-height: 1.8; color: #45535a; margin: 0 0 32px;">She combines this wealth of experience with care and compassion to provide timely, effective management — believing that good communication with patients, relatives, referring doctors and allied health practitioners is integral to optimal patient care.</p>
-        <div style="display: grid; grid-template-columns: {{ credentialsGridCols }}; gap: 18px 32px; margin-bottom: 36px;">
+        <div style="font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 18px;">About Dr Kelly</div>
+        <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: 32px; font-weight: 500; margin: 0 0 26px; line-height: 1.25; color: #16263A;">A specialist trusted by patients and referring doctors alike</h2>
+        <p style="font-size: 16px; line-height: 1.85; color: #55524B; margin: 0 0 20px;">After completing medical training at the University of Queensland, Dr Kelly undertook specialist training in Otolaryngology, Head and Neck Surgery and attained Fellowship of the Royal Australasian College of Surgeons in 1995.</p>
+        <p style="font-size: 16px; line-height: 1.85; color: #55524B; margin: 0 0 34px;">She combines this wealth of experience with care and compassion to provide timely, effective management — believing that good communication with patients, relatives, referring doctors and allied health practitioners is integral to optimal patient care.</p>
+        <div style="display: grid; grid-template-columns: {{ credentialsGridCols }}; gap: 18px 32px; margin-bottom: 38px;">
           <sc-for list="{{ credentials }}" as="c" hint-placeholder-count="4">
             <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="width: 6px; height: 6px; border-radius: 50%; background: #5E98B6; margin-top: 8px; flex-shrink: 0;"></span>
-              <span style="font-size: 14.5px; line-height: 1.6; color: #263238;">{{ c }}</span>
+              <span style="width: 5px; height: 5px; border-radius: 50%; background: #AD8A54; margin-top: 9px; flex-shrink: 0;"></span>
+              <span style="font-size: 14.5px; line-height: 1.6; color: #24282D;">{{ c }}</span>
             </div>
           </sc-for>
         </div>
-        <a href="#final-cta" style="color: #1F6D78; font-size: 15px; font-weight: 600; padding-bottom: 4px; border-bottom: 1px solid #BFD9E2;">Learn more about Dr Kelly →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" data-screen-label="Testimonials" style="padding: {{ sectionPadding }}; background: #FFFFFF;">
-    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-      <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E98B6; font-weight: 600; margin-bottom: 16px;">Patient Reviews</div>
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; margin: 0 0 48px; line-height: 1.25;">What Patients Say</h2>
-      <div style="display: grid; grid-template-columns: {{ testimonialGridCols }}; gap: 28px; text-align: left;">
-        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="4">
-          <div style="background: #F6F9FA; padding: {{ testimonialPadding }}; border-top: 2px solid #1F6D78; display: flex; flex-direction: column;">
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 22px;">
-              <sc-for list="{{ t.stars }}" as="s" hint-placeholder-count="5">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#5E98B6"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.3l7.1-.7z"></path></svg>
-              </sc-for>
-            </div>
-            <p style="font-family: 'Playfair Display', serif; font-size: {{ testimonialQuoteSize }}; font-style: italic; line-height: 1.55; color: #263238; margin: 0 0 28px; flex: 1;">"{{ t.quote }}"</p>
-            <div style="font-size: 15px; font-weight: 600; color: #1F6D78;">{{ t.name }}</div>
-            <div style="font-size: 13px; color: #8A9AA0; margin-top: 4px;">{{ t.source }}</div>
-          </div>
-        </sc-for>
+        <a href="#final-cta" style="color: #16263A; font-size: 14.5px; font-weight: 600; padding-bottom: 4px; border-bottom: 1px solid #AD8A54;">Learn more about Dr Kelly →</a>
       </div>
     </div>
   </section>
 
   <!-- AREAS OF EXPERTISE -->
-  <section id="expertise" data-screen-label="Areas of Expertise" style="padding: {{ sectionPadding }}; background: #FFFFFF;">
-    <div style="max-width: 1280px; margin: 0 auto;">
-      <div style="max-width: 640px; margin: 0 auto 64px; text-align: center;">
-        <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E98B6; font-weight: 600; margin-bottom: 16px;">What Can Dr Kelly Help With?</div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; margin: 0; line-height: 1.25;">Areas of Expertise</h2>
+  <section id="expertise" data-screen-label="Areas of Expertise" style="padding: {{ sectionPadding }}; background: #F1ECE1;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="max-width: 640px; margin: 0 auto 60px; text-align: center;">
+        <div style="font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 18px;">What Can Dr Kelly Help With?</div>
+        <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: 32px; font-weight: 500; margin: 0; line-height: 1.25; color: #16263A;">Areas of Expertise</h2>
       </div>
-      <div style="display: grid; grid-template-columns: {{ expertiseGridCols }}; gap: 1px; background: #EDF2F3; border: 1px solid #EDF2F3;">
+      <div style="display: grid; grid-template-columns: {{ expertiseGridCols }}; gap: 28px;">
         <sc-for list="{{ expertiseCards }}" as="card" hint-placeholder-count="5">
-          <div style="background: #FFFFFF; display: flex; flex-direction: column; min-height: 320px;">
-            <image-slot id="{{ card.slotId }}" shape="rect" placeholder="{{ card.imagePlaceholder }}" style="width: 100%; height: 160px; display: block;"></image-slot>
-            <div style="padding: 28px 32px; display: flex; flex-direction: column; gap: 16px; flex: 1;">
-            <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: #1F6D78;">{{ card.title }}</div>
-            <p style="font-size: 14.5px; line-height: 1.7; color: #45535a; margin: 0; flex: 1;">{{ card.desc }}</p>
-            <a href="./Conditions and Treatments.dc.html" style="font-size: 13.5px; font-weight: 600; color: #263238;">Learn More →</a>
+          <div style="background: #FBF8F2; display: flex; flex-direction: column;">
+            <div style="position: relative; height: 200px; overflow: hidden;">
+              <img src="{{ card.image }}" alt="{{ card.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(22,38,58,0.82), rgba(22,38,58,0) 60%);"></div>
+              <div style="position: absolute; left: 20px; right: 20px; bottom: 14px; font-family: 'Newsreader', serif; font-style: italic; font-size: 21px; font-weight: 600; color: #FBF8F2;">{{ card.title }}</div>
+            </div>
+            <div style="padding: 26px 26px 30px; display: flex; flex-direction: column; gap: 16px; flex: 1;">
+              <p style="font-size: 14px; line-height: 1.7; color: #55524B; margin: 0; flex: 1;">{{ card.desc }}</p>
+              <a href="./Conditions and Treatments.dc.html" style="font-size: 13px; font-weight: 600; color: #16263A; border-bottom: 1px solid #AD8A54; align-self: flex-start; padding-bottom: 2px;">Learn More</a>
             </div>
           </div>
         </sc-for>
@@ -220,18 +215,18 @@
   </section>
 
   <!-- PATIENT JOURNEY -->
-  <section id="journey" data-screen-label="Patient Journey" style="background: #1F6D78; padding: {{ sectionPadding }};">
-    <div style="max-width: 1280px; margin: 0 auto;">
-      <div style="max-width: 640px; margin: 0 auto 64px; text-align: center;">
-        <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #BFD9E2; font-weight: 600; margin-bottom: 16px;">The Process</div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; margin: 0; color: #FFFFFF; line-height: 1.25;">Your Patient Journey</h2>
+  <section id="journey" data-screen-label="Patient Journey" style="padding: {{ sectionPadding }}; background: #FBF8F2;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="max-width: 640px; margin: 0 auto 60px; text-align: center;">
+        <div style="font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 18px;">The Process</div>
+        <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: 32px; font-weight: 500; margin: 0; line-height: 1.25; color: #16263A;">Your Patient Journey</h2>
       </div>
       <div style="display: grid; grid-template-columns: {{ journeyGridCols }}; gap: 24px 16px;">
         <sc-for list="{{ journeySteps }}" as="step" hint-placeholder-count="6">
-          <div style="text-align: center;">
-            <div style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-family: 'Playfair Display', serif; color: #FFFFFF; font-size: 16px;">{{ step.n }}</div>
-            <div style="color: #FFFFFF; font-size: 15px; font-weight: 600; margin-bottom: 8px;">{{ step.label }}</div>
-            <div style="color: #BFD9E2; font-size: 12.5px; line-height: 1.6;">{{ step.sub }}</div>
+          <div style="text-align: center; border-top: 2px solid #AD8A54; padding-top: 20px;">
+            <div style="font-family: 'Newsreader', serif; font-style: italic; font-size: 24px; color: #AD8A54; margin-bottom: 10px;">{{ step.n }}</div>
+            <div style="color: #16263A; font-size: 14.5px; font-weight: 600; margin-bottom: 8px;">{{ step.label }}</div>
+            <div style="color: #6B655C; font-size: 12.5px; line-height: 1.6;">{{ step.sub }}</div>
           </div>
         </sc-for>
       </div>
@@ -239,35 +234,63 @@
   </section>
 
   <!-- BANNER IMAGE -->
-  <image-slot id="banner-practice" shape="rect" placeholder="Consulting rooms / practice photo" style="width: 100%; height: {{ bannerHeight }}; display: block;"></image-slot>
+  <div style="position: relative; height: {{ bannerHeight }};">
+    <img src="uploads/images-2.jpg" alt="ENT consultation in progress" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    <div style="position: absolute; inset: 0; background: rgba(22,38,58,0.4);"></div>
+    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 20px;">
+      <div style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ bannerQuoteSize }}; color: #FBF8F2; text-align: center; max-width: 700px; line-height: 1.4;">"Good communication with patients is integral to optimal care."</div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" data-screen-label="Testimonials" style="padding: {{ sectionPadding }}; background: #16263A;">
+    <div style="max-width: 1240px; margin: 0 auto; text-align: center;">
+      <div style="font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 18px;">Patient Reviews</div>
+      <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: 32px; font-weight: 500; margin: 0 0 52px; line-height: 1.25; color: #FBF8F2;">What Patients Say</h2>
+      <div style="display: grid; grid-template-columns: {{ testimonialGridCols }}; gap: 28px; text-align: left;">
+        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="4">
+          <div style="background: #FBF8F2; padding: {{ testimonialPadding }}; display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 22px;">
+              <sc-for list="{{ t.stars }}" as="s" hint-placeholder-count="5">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#AD8A54"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L2 9.3l7.1-.7z"></path></svg>
+              </sc-for>
+            </div>
+            <p style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ testimonialQuoteSize }}; line-height: 1.6; color: #24282D; margin: 0 0 28px; flex: 1;">"{{ t.quote }}"</p>
+            <div style="font-size: 14.5px; font-weight: 600; color: #16263A;">{{ t.name }}</div>
+            <div style="font-size: 12.5px; color: #9A9488; margin-top: 4px;">{{ t.source }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
 
   <!-- LOCATIONS -->
-  <section id="locations" data-screen-label="Locations" style="padding: {{ sectionPadding }}; background: #FFFFFF;">
-    <div style="max-width: 1280px; margin: 0 auto;">
-      <div style="max-width: 640px; margin: 0 auto 64px; text-align: center;">
-        <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E98B6; font-weight: 600; margin-bottom: 16px;">Where to Find Us</div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; margin: 0; line-height: 1.25;">Consulting &amp; Surgical Locations</h2>
+  <section id="locations" data-screen-label="Locations" style="padding: {{ sectionPadding }}; background: #F1ECE1;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="max-width: 640px; margin: 0 auto 60px; text-align: center;">
+        <div style="font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 18px;">Where to Find Us</div>
+        <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: 32px; font-weight: 500; margin: 0; line-height: 1.25; color: #16263A;">Consulting &amp; Surgical Locations</h2>
       </div>
       <div style="display: grid; grid-template-columns: {{ consultingGridCols }}; gap: 28px; margin-bottom: 56px;">
         <sc-for list="{{ consultingLocations }}" as="loc" hint-placeholder-count="2">
-          <div style="background: #F6F9FA; display: flex; flex-direction: column;">
+          <div style="background: #FBF8F2; display: flex; flex-direction: column;">
             <image-slot id="{{ loc.slotId }}" src="{{ loc.image }}" shape="rect" placeholder="{{ loc.imagePlaceholder }}" style="width: 100%; height: 190px; display: block;"></image-slot>
-            <div style="padding: 28px 32px; border-left: 2px solid #1F6D78; flex: 1;">
-              <div style="font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600; margin-bottom: 12px; color: #263238;">{{ loc.name }}</div>
-              <div style="font-size: 14.5px; line-height: 1.7; color: #45535a; margin-bottom: 14px;">{{ loc.address }}</div>
-              <div style="font-size: 14px; color: #263238; font-weight: 500;">T: {{ loc.phone }}</div>
+            <div style="padding: 28px 32px; border-top: 2px solid #AD8A54; flex: 1;">
+              <div style="font-family: 'Newsreader', serif; font-style: italic; font-size: 19px; font-weight: 600; margin-bottom: 12px; color: #16263A;">{{ loc.name }}</div>
+              <div style="font-size: 14.5px; line-height: 1.7; color: #55524B; margin-bottom: 14px;">{{ loc.address }}</div>
+              <div style="font-size: 14px; color: #24282D; font-weight: 500;">T: {{ loc.phone }}</div>
             </div>
           </div>
         </sc-for>
       </div>
-      <div style="text-align: center; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #5E98B6; font-weight: 600; margin-bottom: 28px;">Surgical Locations</div>
+      <div style="text-align: center; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 28px;">Surgical Locations</div>
       <div style="display: grid; grid-template-columns: {{ surgicalGridCols }}; gap: 24px;">
         <sc-for list="{{ surgicalHospitals }}" as="h" hint-placeholder-count="4">
-          <div style="text-align: center; border: 1px solid #EDF2F3; overflow: hidden;">
+          <div style="text-align: center; background: #FBF8F2; overflow: hidden;">
             <image-slot id="{{ h.slotId }}" src="{{ h.image }}" shape="rect" placeholder="{{ h.imagePlaceholder }}" style="width: 100%; height: 130px; display: block;"></image-slot>
             <div style="padding: 20px 16px;">
-              <div style="font-size: 15px; font-weight: 600; color: #263238; margin-bottom: 6px;">{{ h.name }}</div>
-              <div style="font-size: 13px; color: #45535a;">{{ h.sub }}</div>
+              <div style="font-size: 15px; font-weight: 600; color: #16263A; margin-bottom: 6px;">{{ h.name }}</div>
+              <div style="font-size: 13px; color: #55524B;">{{ h.sub }}</div>
             </div>
           </div>
         </sc-for>
@@ -276,21 +299,21 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" data-screen-label="FAQ" style="background: #F6F9FA; padding: {{ sectionPadding }};">
+  <section id="faq" data-screen-label="FAQ" style="background: #FBF8F2; padding: {{ sectionPadding }};">
     <div style="max-width: 800px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 56px;">
-        <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E98B6; font-weight: 600; margin-bottom: 16px;">Patient Information</div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; margin: 0; line-height: 1.25;">Frequently Asked Questions</h2>
+        <div style="font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 18px;">Patient Information</div>
+        <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: 32px; font-weight: 500; margin: 0; line-height: 1.25; color: #16263A;">Frequently Asked Questions</h2>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 1px; background: #E3EBEC; border: 1px solid #E3EBEC;">
+      <div style="display: flex; flex-direction: column;">
         <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="5">
-          <div style="background: #FFFFFF;">
-            <button onclick="{{ faq.toggle }}" style="width: 100%; text-align: left; background: none; border: none; padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; font-family: 'Inter', sans-serif;">
-              <span style="font-size: 16px; font-weight: 600; color: #263238;">{{ faq.q }}</span>
-              <span style="font-size: 20px; color: #1F6D78; flex-shrink: 0;">{{ faq.symbol }}</span>
+          <div style="border-bottom: 1px solid rgba(22,38,58,0.15);">
+            <button onclick="{{ faq.toggle }}" style="width: 100%; text-align: left; background: none; border: none; padding: 24px 4px; display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; font-family: 'Work Sans', sans-serif;">
+              <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; font-weight: 600; color: #16263A;">{{ faq.q }}</span>
+              <span style="font-size: 20px; color: #AD8A54; flex-shrink: 0;">{{ faq.symbol }}</span>
             </button>
             <sc-if value="{{ faq.isOpen }}">
-              <div style="padding: 0 28px 26px; font-size: 14.5px; line-height: 1.75; color: #45535a;">{{ faq.a }}</div>
+              <div style="padding: 0 4px 26px; font-size: 14.5px; line-height: 1.75; color: #55524B;">{{ faq.a }}</div>
             </sc-if>
           </div>
         </sc-for>
@@ -299,69 +322,68 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section id="final-cta" data-screen-label="Final CTA" style="background: #263238; padding: {{ sectionPadding }}; text-align: center;">
+  <section id="final-cta" data-screen-label="Final CTA" style="background: #16263A; padding: {{ sectionPadding }}; text-align: center;">
     <div style="max-width: 640px; margin: 0 auto;">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: {{ finalCtaHeadingSize }}; font-weight: 600; color: #FFFFFF; margin: 0 0 20px; line-height: 1.3;">Book an appointment with Dr Sharon Kelly</h2>
-      <p style="font-size: 16px; line-height: 1.7; color: #BFD9E2; margin: 0 0 40px;">Referrals, consultation enquiries and appointment requests are welcome from patients and referring doctors.</p>
+      <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ finalCtaHeadingSize }}; font-weight: 500; color: #FBF8F2; margin: 0 0 20px; line-height: 1.3;">Book an appointment with Dr Sharon Kelly</h2>
+      <p style="font-size: 16px; line-height: 1.7; color: #C7C1B4; margin: 0 0 40px;">Referrals, consultation enquiries and appointment requests are welcome from patients and referring doctors.</p>
       <div style="display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;">
-        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="background: #5E98B6; color: #FFFFFF; padding: 17px 36px; border-radius: 2px; font-size: 15px; font-weight: 600;" style-hover="background: #4d84a0;">Book Appointment</a>
-        <a href="mailto:admin@drsharonkellyent.com.au" style="color: #FFFFFF; padding: 17px 8px; font-size: 15px; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.35);">Email the Practice</a>
+        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="background: #AD8A54; color: #16263A; padding: 17px 38px; font-size: 14.5px; font-weight: 600;" style-hover="background: #E7D9BE;">Book Appointment</a>
+        <a href="mailto:admin@drsharonkellyent.com.au" style="color: #FBF8F2; padding: 17px 8px; font-size: 14.5px; font-weight: 600; border-bottom: 1px solid rgba(251,248,242,0.4);">Email the Practice</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer style="background: #1a2327; padding: {{ footerPadding }};">
-    <div style="max-width: 1280px; margin: 0 auto;">
-      <div style="display: grid; grid-template-columns: {{ footerGridCols }}; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+  <footer style="background: #101C2B; padding: {{ footerPadding }};">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: {{ footerGridCols }}; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(251,248,242,0.1);">
         <div>
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
-            <svg width="30" height="30" viewBox="0 0 48 48" fill="none">
-              <rect x="20" y="5" width="8" height="38" rx="4" fill="#5E98B6"></rect>
-              <path d="M5 24 C 11 13, 17 35, 24 24 C 31 13, 37 35, 43 24" stroke="#BFD9E2" stroke-width="7" stroke-linecap="round" fill="none"></path>
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="18.5" stroke="#AD8A54" stroke-width="1.4"></circle>
+              <path d="M12 21c0-6.5 4-11 8-11s8 4.5 8 11-4 11-8 11" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" fill="none"></path>
             </svg>
-            <span style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: #FFFFFF;">Dr Sharon Kelly</span>
+            <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; font-weight: 600; color: #FBF8F2;">Sharon Kelly</span>
           </div>
-          <p style="font-size: 13.5px; line-height: 1.7; color: #9AAAB0; max-width: 260px; margin: 0;">Ear, Nose and Throat Specialist Surgeon, providing specialist ENT care across Brisbane for over twenty years.</p>
+          <p style="font-size: 13.5px; line-height: 1.7; color: #8A8578; max-width: 260px; margin: 0;">Ear, Nose and Throat Specialist Surgeon, providing specialist ENT care across Brisbane for over twenty years.</p>
         </div>
         <div>
-          <div style="font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #6C848B; font-weight: 600; margin-bottom: 20px;">Explore</div>
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6558; font-weight: 600; margin-bottom: 20px;">Explore</div>
           <div style="display: flex; flex-direction: column; gap: 12px;">
             <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
-              <a href="{{ item.href }}" style="font-size: 14px; color: #C7D3D6;">{{ item.label }}</a>
+              <a href="{{ item.href }}" style="font-size: 14px; color: #C7C1B4;">{{ item.label }}</a>
             </sc-for>
           </div>
         </div>
         <div>
-          <div style="font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #6C848B; font-weight: 600; margin-bottom: 20px;">Contact</div>
-          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #C7D3D6;">
-            <a href="tel:0738317866" style="color: #C7D3D6;">07 3831 7866</a>
-            <a href="mailto:admin@drsharonkellyent.com.au" style="color: #C7D3D6;">admin@drsharonkellyent.com.au</a>
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6558; font-weight: 600; margin-bottom: 20px;">Contact</div>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #C7C1B4;">
+            <a href="tel:0738317866" style="color: #C7C1B4;">07 3831 7866</a>
+            <a href="mailto:admin@drsharonkellyent.com.au" style="color: #C7C1B4;">admin@drsharonkellyent.com.au</a>
             <span>Watkins Medical Centre, Spring Hill</span>
           </div>
         </div>
         <div>
-          <div style="font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #6C848B; font-weight: 600; margin-bottom: 20px;">Recognition</div>
-          <img src="https://www.sharonkelly-ent.com/media/jchhivd5/fracslogo.jpg" alt="Fellow of the Royal Australasian College of Surgeons" style="height: 46px; width: auto; background: #FFFFFF; padding: 6px 10px; border-radius: 2px;">
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6558; font-weight: 600; margin-bottom: 20px;">Recognition</div>
+          <img src="https://www.sharonkelly-ent.com/media/jchhivd5/fracslogo.jpg" alt="Fellow of the Royal Australasian College of Surgeons" style="height: 46px; width: auto; background: #FBF8F2; padding: 6px 10px;">
         </div>
       </div>
       <div style="padding-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-        <span style="font-size: 12.5px; color: #6C848B;">© 2026 Dr Sharon Kelly. All rights reserved.</span>
+        <span style="font-size: 12.5px; color: #6B6558;">© 2026 Dr Sharon Kelly. All rights reserved.</span>
         <div style="display: flex; gap: 24px;">
-          <a href="#" style="font-size: 12.5px; color: #6C848B;">Terms</a>
-          <a href="#" style="font-size: 12.5px; color: #6C848B;">Privacy</a>
-          <a href="#" style="font-size: 12.5px; color: #6C848B;">Disclaimer</a>
+          <a href="#" style="font-size: 12.5px; color: #6B6558;">Terms</a>
+          <a href="#" style="font-size: 12.5px; color: #6B6558;">Privacy</a>
+          <a href="#" style="font-size: 12.5px; color: #6B6558;">Disclaimer</a>
         </div>
       </div>
     </div>
   </footer>
 
 </div>
-
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { openFaq: 0, windowWidth: typeof window !== "undefined" ? window.innerWidth : 1280, mobileMenuOpen: false, megaOpen: false };
+  state = { openFaq: 0, windowWidth: typeof window !== "undefined" ? window.innerWidth : 1320, mobileMenuOpen: false, megaOpen: false };
 
   componentDidMount() {
     this.handleResize = () => this.setState({ windowWidth: window.innerWidth });
@@ -394,16 +416,15 @@ class Component extends DCLogic {
 
     const linkProc = (name, href) => ({ label: name, href: href || "./Conditions and Treatments.dc.html" });
     const megaCategories = [
-      { title: "Ear", href: "./Conditions and Treatments.dc.html#ear", items: [linkProc("Grommets", "./Grommets.dc.html"), linkProc("Mastoidectomy"), linkProc("Myringoplasty")] },
+      { title: "Ear", href: "./Conditions and Treatments.dc.html#ear", items: [linkProc("Grommets", "./Grommets Concept 2.dc.html"), linkProc("Mastoidectomy"), linkProc("Myringoplasty")] },
       { title: "Nose & Sinus", href: "./Conditions and Treatments.dc.html#nose-sinus", items: [linkProc("Functional Endoscopic Sinus Surgery"), linkProc("Septoplasty"), linkProc("Turbinate Reduction")] },
       { title: "Throat", href: "./Conditions and Treatments.dc.html#throat", items: [linkProc("Tonsillectomy"), linkProc("UPPP Sleep Surgery")] },
       { title: "Head & Neck", href: "./Conditions and Treatments.dc.html#head-neck", items: [linkProc("Parotidectomy"), linkProc("Salivary Gland Surgery")] },
-      { title: "Paediatric ENT", href: "./Conditions and Treatments.dc.html#paediatric", items: [linkProc("Adenotonsillectomy"), linkProc("Grommets", "./Grommets.dc.html"), linkProc("Tonsillectomy")] }
+      { title: "Paediatric ENT", href: "./Conditions and Treatments.dc.html#paediatric", items: [linkProc("Adenotonsillectomy"), linkProc("Grommets", "./Grommets Concept 2.dc.html"), linkProc("Tonsillectomy")] }
     ];
 
     const topBarSidePad = isMobile ? "20px" : "32px";
     const topBarEmailDisplay = isMobile ? "none" : "inline";
-    const topBarReferDisplay = isMobile ? "none" : "inline";
     const headerPadding = isMobile ? "14px 20px" : "16px 32px";
     const headerCtaDisplay = isMobile ? "none" : "inline-block";
     const navDisplay = isCompactNav ? "none" : "flex";
@@ -420,15 +441,20 @@ class Component extends DCLogic {
     const hamburgerBar2Opacity = menuOpen ? 0 : 1;
     const hamburgerBar3Transform = menuOpen ? "translateY(-6px) rotate(-45deg)" : "none";
 
-    const heroPadding = isMobile ? "48px 20px 56px" : isNarrow ? "64px 32px 72px" : "88px 32px 96px";
+    const heroPadding = isMobile ? "44px 20px 0" : isNarrow ? "60px 32px 0" : "76px 32px 0";
     const heroGridCols = isNarrow ? "1fr" : "1.05fr 0.95fr";
-    const heroHeadingSize = isMobile ? "32px" : isNarrow ? "42px" : "52px";
-    const heroImageHeight = isMobile ? "300px" : isNarrow ? "380px" : "520px";
+    const heroHeadingSize = isMobile ? "32px" : isNarrow ? "42px" : "54px";
+    const heroImageHeight = isMobile ? "300px" : isNarrow ? "380px" : "500px";
     const heroBackdropDisplay = isMobile ? "none" : "block";
 
-    const aboutPadding = isMobile ? "56px 20px" : isNarrow ? "72px 32px" : "100px 32px";
+    const trustStripPadding = isMobile ? "22px 20px" : "26px 32px";
+    const trustStripJustify = isNarrow ? "space-between" : "center";
+    const trustStripGap = isNarrow ? "20px" : "64px";
+
+    const aboutPadding = isMobile ? "72px 20px 56px" : isNarrow ? "88px 32px 72px" : "110px 32px 100px";
     const aboutGridCols = isNarrow ? "1fr" : "0.8fr 1.2fr";
-    const aboutImageHeight = isMobile ? "360px" : "480px";
+    const aboutImageHeight = isMobile ? "360px" : "500px";
+    const aboutInsetDisplay = isMobile ? "none" : "block";
     const credentialsGridCols = isMobile ? "1fr" : "1fr 1fr";
 
     const sectionPadding = isMobile ? "56px 20px" : isNarrow ? "72px 32px" : "110px 32px";
@@ -438,9 +464,10 @@ class Component extends DCLogic {
     const surgicalGridCols = isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)";
     const finalCtaHeadingSize = isMobile ? "27px" : "38px";
     const testimonialPadding = isMobile ? "32px 24px" : "40px 36px";
-    const testimonialQuoteSize = isMobile ? "17px" : "18px";
+    const testimonialQuoteSize = isMobile ? "16px" : "17px";
     const testimonialGridCols = isMobile ? "1fr" : isNarrow ? "1fr 1fr" : "repeat(4, 1fr)";
-    const bannerHeight = isMobile ? "220px" : "420px";
+    const bannerHeight = isMobile ? "260px" : "440px";
+    const bannerQuoteSize = isMobile ? "20px" : "30px";
     const footerGridCols = isMobile ? "1fr" : isNarrow ? "repeat(2, 1fr)" : "1.4fr 1fr 1fr 1fr";
     const footerPadding = isMobile ? "48px 20px 24px" : "64px 32px 32px";
 
@@ -459,12 +486,19 @@ class Component extends DCLogic {
       "Chairman of Council, AMA Queensland"
     ];
 
+    const trustItems = [
+      { n: "20+", label: "Years in Practice" },
+      { n: "1995", label: "FRACS Fellow" },
+      { n: "3", label: "Brisbane Hospitals" },
+      { n: "All Ages", label: "Adults & Children" }
+    ];
+
     const expertiseCards = [
-      { title: "Ear", desc: "Hearing loss, ear infections and eardrum perforation. Procedures include grommets, mastoidectomy and myringoplasty.", slotId: "expertise-ear", imagePlaceholder: "Ear condition image" },
-      { title: "Nose & Sinus", desc: "Sinusitis, nasal allergies, and nasal injury or deformity. Procedures include FESS, septoplasty and turbinate reduction.", slotId: "expertise-nose", imagePlaceholder: "Nose & sinus image" },
-      { title: "Throat", desc: "Tonsillitis, sore throat, voice and swallowing concerns, and snoring. Procedures include tonsillectomy and UPPP sleep surgery.", slotId: "expertise-throat", imagePlaceholder: "Throat condition image" },
-      { title: "Head & Neck", desc: "Salivary gland infection and tumours, and submandibular or parotid duct stones treated endoscopically.", slotId: "expertise-headneck", imagePlaceholder: "Head & neck image" },
-      { title: "Paediatric ENT", desc: "Tonsils and adenoids, ear infections, grommets, snoring, tongue tie and prominent ears in children.", slotId: "expertise-paediatric", imagePlaceholder: "Paediatric ENT image" }
+      { title: "Ear", desc: "Hearing loss, ear infections and eardrum perforation. Procedures include grommets, mastoidectomy and myringoplasty.", image: "uploads/s2 (1).jpg" },
+      { title: "Nose & Sinus", desc: "Sinusitis, nasal allergies, and nasal injury or deformity. Procedures include FESS, septoplasty and turbinate reduction.", image: "uploads/uri_ifs___M_StjVAVBUCcEcxQuMLRIHbZ-65Z858plOBV4-pOXBEtY.jpg" },
+      { title: "Throat", desc: "Tonsillitis, sore throat, voice and swallowing concerns, and snoring. Procedures include tonsillectomy and UPPP sleep surgery.", image: "uploads/uri_ifs___M_LV7OT1ytb6u4dafr6PSwxZ8bOOlIgbgmSO6tIbHMexM.jpg" },
+      { title: "Head & Neck", desc: "Salivary gland infection and tumours, and submandibular or parotid duct stones treated endoscopically.", image: "uploads/images-9.jpg" },
+      { title: "Paediatric ENT", desc: "Tonsils and adenoids, ear infections, grommets, snoring, tongue tie and prominent ears in children.", image: "uploads/images-5.jpg" }
     ];
 
     const journeySteps = [
@@ -477,15 +511,15 @@ class Component extends DCLogic {
     ];
 
     const consultingLocations = [
-      { name: "Watkins Medical Centre", address: "Level 9/225 Wickham Terrace, Spring Hill, Brisbane QLD 4000", phone: "07 3831 7866", slotId: "loc-watkins", image: "", imagePlaceholder: "Watkins Medical Centre photo" },
-      { name: "Greenslopes Private Hospital", address: "Ground Floor, Specialist Outpatient Clinics, Newdegate St, Greenslopes QLD 4120", phone: "07 3394 7670", slotId: "loc-greenslopes", image: "https://www.sharonkelly-ent.com/media/ubehvrqf/greenslopes-private-hospital.png", imagePlaceholder: "Greenslopes Private Hospital photo" }
+      { name: "Watkins Medical Centre", address: "Level 9/225 Wickham Terrace, Spring Hill, Brisbane QLD 4000", phone: "07 3831 7866", slotId: "loc-watkins-c2", image: "", imagePlaceholder: "Watkins Medical Centre photo" },
+      { name: "Greenslopes Private Hospital", address: "Ground Floor, Specialist Outpatient Clinics, Newdegate St, Greenslopes QLD 4120", phone: "07 3394 7670", slotId: "loc-greenslopes-c2", image: "https://www.sharonkelly-ent.com/media/ubehvrqf/greenslopes-private-hospital.png", imagePlaceholder: "Greenslopes Private Hospital photo" }
     ];
 
     const surgicalHospitals = [
-      { name: "St Andrews War Memorial Hospital", sub: "Spring Hill, Brisbane", slotId: "hosp-standrews", image: "https://www.sharonkelly-ent.com/media/jcdffkuo/st-andrews-war-memorial-hospital.png", imagePlaceholder: "St Andrews photo" },
-      { name: "Greenslopes Private Hospital", sub: "Greenslopes", slotId: "hosp-greenslopes", image: "https://www.sharonkelly-ent.com/media/ubehvrqf/greenslopes-private-hospital.png", imagePlaceholder: "Greenslopes photo" },
-      { name: "Herston Private Hospital", sub: "Bowen Hills, Brisbane", slotId: "hosp-herston", image: "https://www.sharonkelly-ent.com/media/5pan2o03/herston-private-hospital.png", imagePlaceholder: "Herston photo" },
-      { name: "Royal Brisbane and Women's Hospital", sub: "Uninsured adult patients", slotId: "hosp-rbwh", image: "", imagePlaceholder: "RBWH photo" }
+      { name: "St Andrews War Memorial Hospital", sub: "Spring Hill, Brisbane", slotId: "hosp-standrews-c2", image: "https://www.sharonkelly-ent.com/media/jcdffkuo/st-andrews-war-memorial-hospital.png", imagePlaceholder: "St Andrews photo" },
+      { name: "Greenslopes Private Hospital", sub: "Greenslopes", slotId: "hosp-greenslopes-c2", image: "https://www.sharonkelly-ent.com/media/ubehvrqf/greenslopes-private-hospital.png", imagePlaceholder: "Greenslopes photo" },
+      { name: "Herston Private Hospital", sub: "Bowen Hills, Brisbane", slotId: "hosp-herston-c2", image: "https://www.sharonkelly-ent.com/media/5pan2o03/herston-private-hospital.png", imagePlaceholder: "Herston photo" },
+      { name: "Royal Brisbane and Women's Hospital", sub: "Uninsured adult patients", slotId: "hosp-rbwh-c2", image: "", imagePlaceholder: "RBWH photo" }
     ];
 
     const faqData = [
@@ -538,6 +572,7 @@ class Component extends DCLogic {
       navItems,
       megaNavItems,
       credentials,
+      trustItems,
       expertiseCards,
       journeySteps,
       consultingLocations,
@@ -558,7 +593,6 @@ class Component extends DCLogic {
       megaCategories,
       topBarSidePad,
       topBarEmailDisplay,
-      topBarReferDisplay,
       headerPadding,
       headerCtaDisplay,
       navDisplay,
@@ -577,9 +611,13 @@ class Component extends DCLogic {
       heroHeadingSize,
       heroImageHeight,
       heroBackdropDisplay,
+      trustStripPadding,
+      trustStripJustify,
+      trustStripGap,
       aboutPadding,
       aboutGridCols,
       aboutImageHeight,
+      aboutInsetDisplay,
       credentialsGridCols,
       sectionPadding,
       expertiseGridCols,
@@ -592,6 +630,7 @@ class Component extends DCLogic {
       testimonialGridCols,
       testimonials,
       bannerHeight,
+      bannerQuoteSize,
       footerGridCols,
       footerPadding
     };
