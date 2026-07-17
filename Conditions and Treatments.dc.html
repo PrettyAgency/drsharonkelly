@@ -9,83 +9,83 @@
 <x-dc>
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="./image-slot.js"></script>
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; -webkit-font-smoothing: antialiased; }
-    a { color: #1F6D78; text-decoration: none; }
-    a:hover { color: #164e56; }
-    ::selection { background: #BFD9E2; }
+    a { color: #16263A; text-decoration: none; }
+    a:hover { color: #AD8A54; }
+    ::selection { background: #E7D9BE; }
   </style>
 </helmet>
 
-<div style="font-family: 'Inter', sans-serif; color: #263238; background: #FFFFFF; width: 100%; overflow-x: hidden;">
+<div style="font-family: 'Work Sans', sans-serif; color: #24282D; background: #FBF8F2; width: 100%; overflow-x: hidden;">
 
-  <!-- TOP CONTACT BAR -->
-  <div style="background: #1F6D78; color: #FFFFFF; font-size: 13px;">
-    <div style="max-width: 1280px; margin: 0 auto; padding: 8px {{ topBarSidePad }}; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-      <div style="display: flex; align-items: center; gap: 20px;">
-        <a href="tel:0738317866" style="color: #FFFFFF; opacity: 0.92;">07 3831 7866</a>
-        <a href="mailto:admin@drsharonkellyent.com.au" style="color: #FFFFFF; opacity: 0.92; display: {{ topBarEmailDisplay }};">admin@drsharonkellyent.com.au</a>
+  <!-- TOP UTILITY BAR -->
+  <div style="background: #FBF8F2; border-bottom: 1px solid rgba(22,38,58,0.1); font-size: 12.5px;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 9px {{ topBarSidePad }}; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 22px;">
+        <a href="tel:0738317866" style="color: #24282D;">07 3831 7866</a>
+        <a href="mailto:admin@drsharonkellyent.com.au" style="color: #24282D; display: {{ topBarEmailDisplay }};">admin@drsharonkellyent.com.au</a>
       </div>
-      <div style="display: flex; align-items: center; gap: 20px;">
-        <a href="./Homepage.dc.html#final-cta" style="color: #FFFFFF; opacity: 0.92; display: {{ topBarReferDisplay }};">Referring Doctors: Refer a Patient</a>
-        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="color: #FFFFFF; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;">Book Appointment</a>
-      </div>
+      <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="color: #AD8A54; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 11.5px;">Book Appointment →</a>
     </div>
   </div>
 
   <!-- STICKY HEADER -->
-  <header style="position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #EDF2F3;">
-    <div style="max-width: 1280px; margin: 0 auto; padding: {{ headerPadding }}; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
-      <a href="./Homepage.dc.html" style="display: flex; align-items: center; gap: 12px;">
-        <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-          <rect x="20" y="5" width="8" height="38" rx="4" fill="#1F6D78"></rect>
-          <path d="M5 24 C 11 13, 17 35, 24 24 C 31 13, 37 35, 43 24" stroke="#5E98B6" stroke-width="7" stroke-linecap="round" fill="none"></path>
+  <header style="position: sticky; top: 0; z-index: 40; background: rgba(251,248,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(22,38,58,0.12);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: {{ headerPadding }}; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="./Homepage Concept 2.dc.html" style="display: flex; align-items: center; gap: 13px;">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18.5" stroke="#AD8A54" stroke-width="1.4"></circle>
+          <path d="M12 21c0-6.5 4-11 8-11s8 4.5 8 11-4 11-8 11" stroke="#16263A" stroke-width="2" stroke-linecap="round" fill="none"></path>
         </svg>
-        <span style="font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600; color: #1F6D78; letter-spacing: 0.01em; white-space: nowrap;">Dr Sharon Kelly</span>
+        <span>
+          <span style="display: block; font-family: 'Newsreader', serif; font-style: italic; font-size: 19px; font-weight: 600; color: #16263A; line-height: 1;">Sharon Kelly</span>
+          <span style="display: block; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-top: 2px;">ENT Surgeon, Brisbane</span>
+        </span>
       </a>
-      <nav style="display: {{ navDisplay }}; align-items: center; gap: 30px;">
-        <a href="./Homepage.dc.html#about" style="font-size: 14.5px; font-weight: 500; color: #263238; white-space: nowrap;">About Dr Kelly</a>
-        <button onclick="{{ toggleMega }}" style="display: flex; align-items: center; gap: 6px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14.5px; font-weight: 500; color: #1F6D78; white-space: nowrap;">
+      <nav style="display: {{ navDisplay }}; align-items: center; gap: 32px;">
+        <a href="./Homepage Concept 2.dc.html#about" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">About</a>
+        <button onclick="{{ toggleMega }}" style="display: flex; align-items: center; gap: 6px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 500; color: #AD8A54; white-space: nowrap;">
           Conditions &amp; Treatments
-          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="transition: transform 0.3s ease; transform: {{ megaChevronTransform }};"><path d="M1 1L5 5L9 1" stroke="#1F6D78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="transition: transform 0.3s ease; transform: {{ megaChevronTransform }};"><path d="M1 1L5 5L9 1" stroke="#AD8A54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </button>
-        <a href="./Homepage.dc.html#faq" style="font-size: 14.5px; font-weight: 500; color: #263238; white-space: nowrap;">Patient Information</a>
-        <a href="./Homepage.dc.html#locations" style="font-size: 14.5px; font-weight: 500; color: #263238; white-space: nowrap;">Locations</a>
-        <a href="./Homepage.dc.html#final-cta" style="font-size: 14.5px; font-weight: 500; color: #263238; white-space: nowrap;">Contact</a>
+        <a href="./Homepage Concept 2.dc.html#faq" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">Patient Info</a>
+        <a href="./Homepage Concept 2.dc.html#locations" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">Locations</a>
+        <a href="./Homepage Concept 2.dc.html#final-cta" style="font-size: 14px; font-weight: 500; color: #24282D; white-space: nowrap;">Contact</a>
       </nav>
       <div style="display: flex; align-items: center; gap: 14px;">
-        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="display: {{ headerCtaDisplay }}; background: #1F6D78; color: #FFFFFF; padding: 12px 26px; border-radius: 2px; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #164e56;">Book Appointment</a>
-        <button onclick="{{ toggleMenu }}" aria-label="Toggle menu" style="display: {{ hamburgerDisplay }}; align-items: center; gap: 10px; background: none; border: 1px solid #EDF2F3; border-radius: 2px; cursor: pointer; flex-shrink: 0; padding: 10px 16px;">
-          <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #1F6D78;">{{ menuTriggerLabel }}</span>
+        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="display: {{ headerCtaDisplay }}; background: #16263A; color: #FBF8F2; padding: 12px 27px; font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;" style-hover="background: #AD8A54;">Book Appointment</a>
+        <button onclick="{{ toggleMenu }}" aria-label="Toggle menu" style="display: {{ hamburgerDisplay }}; align-items: center; gap: 10px; background: none; border: 1px solid rgba(22,38,58,0.25); border-radius: 2px; cursor: pointer; flex-shrink: 0; padding: 10px 16px;">
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #16263A;">{{ menuTriggerLabel }}</span>
           <span style="position: relative; width: 18px; height: 14px;">
-            <span style="position: absolute; left: 0; top: 0; width: 18px; height: 2px; border-radius: 1px; background: #1F6D78; transition: transform 0.35s ease, opacity 0.35s ease; transform: {{ hamburgerBar1Transform }};"></span>
-            <span style="position: absolute; left: 0; top: 6px; width: 18px; height: 2px; border-radius: 1px; background: #1F6D78; transition: opacity 0.35s ease; opacity: {{ hamburgerBar2Opacity }};"></span>
-            <span style="position: absolute; left: 0; top: 12px; width: 18px; height: 2px; border-radius: 1px; background: #1F6D78; transition: transform 0.35s ease, opacity 0.35s ease; transform: {{ hamburgerBar3Transform }};"></span>
+            <span style="position: absolute; left: 0; top: 0; width: 18px; height: 2px; border-radius: 1px; background: #16263A; transition: transform 0.35s ease, opacity 0.35s ease; transform: {{ hamburgerBar1Transform }};"></span>
+            <span style="position: absolute; left: 0; top: 6px; width: 18px; height: 2px; border-radius: 1px; background: #16263A; transition: opacity 0.35s ease; opacity: {{ hamburgerBar2Opacity }};"></span>
+            <span style="position: absolute; left: 0; top: 12px; width: 18px; height: 2px; border-radius: 1px; background: #16263A; transition: transform 0.35s ease, opacity 0.35s ease; transform: {{ hamburgerBar3Transform }};"></span>
           </span>
         </button>
       </div>
     </div>
     <!-- MEGA MENU DROPDOWN (desktop) -->
     <div style="display: {{ megaWrapDisplay }}; position: absolute; top: 100%; left: 0; right: 0;">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 32px;">
-        <div style="background: #FFFFFF; box-shadow: 0 24px 40px rgba(38,50,56,0.14); border-top: 2px solid #1F6D78; opacity: {{ megaOpacity }}; transform: {{ megaTransform }}; transform-origin: top center; transition: opacity 0.35s ease, transform 0.35s ease; pointer-events: {{ megaPanelPointerEvents }};">
+      <div style="max-width: 1320px; margin: 0 auto; padding: 0 32px;">
+        <div style="background: #FBF8F2; box-shadow: 0 28px 46px rgba(22,38,58,0.18); border-top: 2px solid #AD8A54; opacity: {{ megaOpacity }}; transform: {{ megaTransform }}; transform-origin: top center; transition: opacity 0.35s ease, transform 0.35s ease; pointer-events: {{ megaPanelPointerEvents }};">
           <div style="padding: 40px 40px 24px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px;">
             <sc-for list="{{ megaCategories }}" as="cat" hint-placeholder-count="5">
               <div>
-                <a href="{{ cat.href }}" onclick="{{ closeMega }}" style="font-family: 'Playfair Display', serif; font-size: 16.5px; font-weight: 600; color: #1F6D78; display: block; margin-bottom: 14px;">{{ cat.title }}</a>
+                <a href="{{ cat.href }}" onclick="{{ closeMega }}" style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; font-weight: 600; color: #16263A; display: block; margin-bottom: 14px;">{{ cat.title }}</a>
                 <div style="display: flex; flex-direction: column; gap: 10px;">
                   <sc-for list="{{ cat.items }}" as="it" hint-placeholder-count="3">
-                    <a href="{{ it.href }}" onclick="{{ closeMega }}" style="font-size: 13.5px; color: #45535a;">{{ it.label }}</a>
+                    <a href="{{ it.href }}" onclick="{{ closeMega }}" style="font-size: 13.5px; color: #6B655C;">{{ it.label }}</a>
                   </sc-for>
                 </div>
               </div>
             </sc-for>
           </div>
-          <div style="border-top: 1px solid #EDF2F3; padding: 18px 40px; display: flex; justify-content: flex-end;">
-            <a href="./Conditions and Treatments.dc.html" onclick="{{ closeMega }}" style="font-size: 13.5px; font-weight: 600; color: #1F6D78;">View All Conditions &amp; Treatments →</a>
+          <div style="border-top: 1px solid rgba(22,38,58,0.1); padding: 18px 40px; display: flex; justify-content: flex-end;">
+            <a href="./Conditions and Treatments Concept 2.dc.html" onclick="{{ closeMega }}" style="font-size: 13.5px; font-weight: 600; color: #16263A;">View All Conditions &amp; Treatments →</a>
           </div>
         </div>
       </div>
@@ -93,80 +93,80 @@
   </header>
 
   <!-- MEGA MENU BACKDROP -->
-  <div onclick="{{ closeMega }}" style="display: {{ megaBackdropDisplay }}; position: fixed; inset: 0; background: rgba(38,50,56,0.25); opacity: {{ megaBackdropOpacity }}; pointer-events: {{ megaPanelPointerEvents }}; transition: opacity 0.35s ease; z-index: 35;"></div>
+  <div onclick="{{ closeMega }}" style="display: {{ megaBackdropDisplay }}; position: fixed; inset: 0; background: rgba(22,38,58,0.3); opacity: {{ megaBackdropOpacity }}; pointer-events: {{ megaPanelPointerEvents }}; transition: opacity 0.35s ease; z-index: 35;"></div>
 
-  <!-- FULL-SCREEN MORPHING MEGA MENU -->
-  <div style="position: fixed; inset: 0; z-index: 60; background: #1F6D78; clip-path: circle({{ menuClipRadius }} at calc(100% - 48px) 48px); transition: clip-path 0.75s cubic-bezier(0.83,0,0.17,1); pointer-events: {{ menuPointerEvents }};">
-    <div style="max-width: 1280px; height: 100%; margin: 0 auto; padding: 32px 32px 40px; display: flex; flex-direction: column;">
+  <!-- FULL-SCREEN MORPHING MENU -->
+  <div style="position: fixed; inset: 0; z-index: 60; background: #16263A; clip-path: circle({{ menuClipRadius }} at calc(100% - 48px) 48px); transition: clip-path 0.75s cubic-bezier(0.83,0,0.17,1); pointer-events: {{ menuPointerEvents }};">
+    <div style="max-width: 1320px; height: 100%; margin: 0 auto; padding: 32px 32px 40px; display: flex; flex-direction: column;">
       <div style="display: flex; align-items: center; justify-content: space-between;">
-        <a href="./Homepage.dc.html" onclick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 12px;">
-          <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-            <rect x="20" y="5" width="8" height="38" rx="4" fill="#FFFFFF"></rect>
-            <path d="M5 24 C 11 13, 17 35, 24 24 C 31 13, 37 35, 43 24" stroke="#BFD9E2" stroke-width="7" stroke-linecap="round" fill="none"></path>
+        <a href="./Homepage Concept 2.dc.html" onclick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 12px;">
+          <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18.5" stroke="#AD8A54" stroke-width="1.4"></circle>
+            <path d="M12 21c0-6.5 4-11 8-11s8 4.5 8 11-4 11-8 11" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" fill="none"></path>
           </svg>
-          <span style="font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600; color: #FFFFFF;">Dr Sharon Kelly</span>
+          <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 19px; font-weight: 600; color: #FBF8F2;">Sharon Kelly</span>
         </a>
-        <button onclick="{{ closeMenu }}" aria-label="Close menu" style="width: 44px; height: 44px; background: none; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; cursor: pointer; position: relative;">
-          <span style="position: absolute; top: 50%; left: 50%; width: 18px; height: 2px; background: #FFFFFF; transform: translate(-50%, -50%) rotate(45deg);"></span>
-          <span style="position: absolute; top: 50%; left: 50%; width: 18px; height: 2px; background: #FFFFFF; transform: translate(-50%, -50%) rotate(-45deg);"></span>
+        <button onclick="{{ closeMenu }}" aria-label="Close menu" style="width: 44px; height: 44px; background: none; border: 1px solid rgba(251,248,242,0.3); border-radius: 50%; cursor: pointer; position: relative;">
+          <span style="position: absolute; top: 50%; left: 50%; width: 18px; height: 2px; background: #FBF8F2; transform: translate(-50%, -50%) rotate(45deg);"></span>
+          <span style="position: absolute; top: 50%; left: 50%; width: 18px; height: 2px; background: #FBF8F2; transform: translate(-50%, -50%) rotate(-45deg);"></span>
         </button>
       </div>
       <nav style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; overflow-y: auto;">
         <sc-for list="{{ megaNavItems }}" as="item" hint-placeholder-count="5">
-          <a href="{{ item.href }}" onclick="{{ closeMenu }}" style="font-family: 'Playfair Display', serif; font-size: {{ megaNavFontSize }}; font-weight: 600; color: #FFFFFF; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.14); opacity: {{ menuItemOpacity }}; transform: {{ menuItemTransform }}; transition: opacity 0.5s ease {{ item.delay }}, transform 0.5s ease {{ item.delay }};" style-hover="color: #BFD9E2;">{{ item.label }}</a>
+          <a href="{{ item.href }}" onclick="{{ closeMenu }}" style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ megaNavFontSize }}; font-weight: 600; color: #FBF8F2; padding: 14px 0; border-bottom: 1px solid rgba(251,248,242,0.14); opacity: {{ menuItemOpacity }}; transform: {{ menuItemTransform }}; transition: opacity 0.5s ease {{ item.delay }}, transform 0.5s ease {{ item.delay }};" style-hover="color: #E7D9BE;">{{ item.label }}</a>
         </sc-for>
       </nav>
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15);">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; padding-top: 24px; border-top: 1px solid rgba(251,248,242,0.15);">
         <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
-          <a href="tel:0738317866" style="color: #FFFFFF; font-size: 14.5px;">07 3831 7866</a>
-          <a href="mailto:admin@drsharonkellyent.com.au" style="color: #FFFFFF; font-size: 14.5px;">admin@drsharonkellyent.com.au</a>
+          <a href="tel:0738317866" style="color: #FBF8F2; font-size: 14.5px;">07 3831 7866</a>
+          <a href="mailto:admin@drsharonkellyent.com.au" style="color: #FBF8F2; font-size: 14.5px;">admin@drsharonkellyent.com.au</a>
         </div>
-        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" onclick="{{ closeMenu }}" style="background: #FFFFFF; color: #1F6D78; padding: 14px 30px; border-radius: 2px; font-size: 14px; font-weight: 600;">Book Appointment</a>
+        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" onclick="{{ closeMenu }}" style="background: #AD8A54; color: #16263A; padding: 14px 30px; font-size: 14px; font-weight: 600;">Book Appointment</a>
       </div>
     </div>
   </div>
 
   <!-- PAGE HEADER -->
-  <section style="background: #F6F9FA; padding: {{ pageHeaderPadding }};">
-    <div style="max-width: 1280px; margin: 0 auto;">
+  <section style="background: #F1ECE1; padding: {{ pageHeaderPadding }};">
+    <div style="max-width: 1320px; margin: 0 auto;">
       <div style="font-size: 13px; margin-bottom: 20px;">
-        <a href="./Homepage.dc.html" style="color: #5E98B6;">Home</a>
-        <span style="color: #9AAAB0; padding: 0 8px;">/</span>
-        <span style="color: #263238;">Conditions &amp; Treatments</span>
+        <a href="./Homepage Concept 2.dc.html" style="color: #AD8A54;">Home</a>
+        <span style="color: #9A9488; padding: 0 8px;">/</span>
+        <span style="color: #24282D;">Conditions &amp; Treatments</span>
       </div>
-      <div style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E98B6; font-weight: 600; margin-bottom: 16px;">What Can Dr Kelly Help With?</div>
-      <h1 style="font-family: 'Playfair Display', serif; font-size: {{ pageHeadingSize }}; font-weight: 600; margin: 0 0 20px; line-height: 1.2; max-width: 760px;">Conditions &amp; Treatments</h1>
-      <p style="font-size: 16.5px; line-height: 1.75; color: #45535a; max-width: 620px; margin: 0;">Dr Kelly provides comprehensive ear, nose and throat care for adults and children — organised below by the areas she treats most often.</p>
+      <div style="font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 18px;">What Can Dr Kelly Help With?</div>
+      <h1 style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ pageHeadingSize }}; font-weight: 500; margin: 0 0 20px; line-height: 1.15; max-width: 760px; color: #16263A;">Conditions &amp; Treatments</h1>
+      <p style="font-size: 16.5px; line-height: 1.75; color: #55524B; max-width: 620px; margin: 0;">Dr Kelly provides comprehensive ear, nose and throat care for adults and children — organised below by the areas she treats most often.</p>
     </div>
   </section>
 
   <!-- CATEGORIES -->
   <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
     <section id="{{ cat.slug }}" data-screen-label="{{ cat.title }}" style="background: {{ cat.bg }}; padding: {{ categoryPadding }}; scroll-margin-top: 90px;">
-      <div style="max-width: 1280px; margin: 0 auto;">
+      <div style="max-width: 1320px; margin: 0 auto;">
         <div style="display: grid; grid-template-columns: {{ categoryHeaderGrid }}; gap: 32px; align-items: center; margin-bottom: 40px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: {{ categoryHeadingSize }}; font-weight: 600; color: #1F6D78; margin: 0;">{{ cat.title }}</h2>
-          <image-slot id="{{ cat.slotId }}" shape="rect" placeholder="{{ cat.imagePlaceholder }}" style="width: 100%; height: {{ categoryImageHeight }}; display: block;"></image-slot>
+          <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ categoryHeadingSize }}; font-weight: 600; color: #16263A; margin: 0;">{{ cat.title }}</h2>
+          <img src="{{ cat.image }}" alt="{{ cat.title }}" style="width: 100%; height: {{ categoryImageHeight }}; object-fit: cover; display: block;">
         </div>
         <div style="display: grid; grid-template-columns: {{ twoColGrid }}; gap: 48px;">
           <div>
-            <div style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #5E98B6; font-weight: 600; margin-bottom: 20px;">Conditions We Treat</div>
+            <div style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 20px;">Conditions We Treat</div>
             <div style="display: flex; flex-direction: column; gap: 14px;">
               <sc-for list="{{ cat.conditions }}" as="c" hint-placeholder-count="4">
                 <div style="display: flex; gap: 12px; align-items: flex-start;">
-                  <span style="width: 6px; height: 6px; border-radius: 50%; background: #BFD9E2; margin-top: 8px; flex-shrink: 0;"></span>
-                  <span style="font-size: 15px; line-height: 1.6; color: #263238;">{{ c }}</span>
+                  <span style="width: 5px; height: 5px; border-radius: 50%; background: #AD8A54; margin-top: 9px; flex-shrink: 0;"></span>
+                  <span style="font-size: 15px; line-height: 1.6; color: #24282D;">{{ c }}</span>
                 </div>
               </sc-for>
             </div>
           </div>
           <div>
-            <div style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #5E98B6; font-weight: 600; margin-bottom: 20px;">Procedures</div>
-            <div style="display: flex; flex-direction: column; gap: 1px; background: #E3EBEC; border: 1px solid #E3EBEC;">
+            <div style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 20px;">Procedures</div>
+            <div style="display: flex; flex-direction: column;">
               <sc-for list="{{ cat.procedures }}" as="p" hint-placeholder-count="3">
-                <a href="{{ p.href }}" style="background: #FFFFFF; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; color: {{ p.textColor }};">
+                <a href="{{ p.href }}" style="background: #FBF8F2; padding: 18px 4px; border-bottom: 1px solid rgba(22,38,58,0.12); display: flex; align-items: center; justify-content: space-between; gap: 16px; color: {{ p.textColor }};">
                   <span style="font-size: 15px; font-weight: 500;">{{ p.name }}</span>
-                  <sc-if value="{{ p.hasLink }}"><span style="font-size: 13px; font-weight: 600; color: #1F6D78; flex-shrink: 0;">Read More →</span></sc-if>
+                  <sc-if value="{{ p.hasLink }}"><span style="font-size: 13px; font-weight: 600; color: #16263A; flex-shrink: 0;">Read More →</span></sc-if>
                 </a>
               </sc-for>
             </div>
@@ -177,69 +177,68 @@
   </sc-for>
 
   <!-- FINAL CTA -->
-  <section style="background: #263238; padding: {{ ctaPadding }}; text-align: center;">
+  <section style="background: #16263A; padding: {{ ctaPadding }}; text-align: center;">
     <div style="max-width: 640px; margin: 0 auto;">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: {{ ctaHeadingSize }}; font-weight: 600; color: #FFFFFF; margin: 0 0 20px; line-height: 1.3;">Book an appointment with Dr Sharon Kelly</h2>
-      <p style="font-size: 16px; line-height: 1.7; color: #BFD9E2; margin: 0 0 40px;">Not sure which condition or treatment applies to you? Get in touch and Dr Kelly's team will help guide you.</p>
+      <h2 style="font-family: 'Newsreader', serif; font-style: italic; font-size: {{ ctaHeadingSize }}; font-weight: 500; color: #FBF8F2; margin: 0 0 20px; line-height: 1.3;">Book an appointment with Dr Sharon Kelly</h2>
+      <p style="font-size: 16px; line-height: 1.7; color: #C7C1B4; margin: 0 0 40px;">Not sure which condition or treatment applies to you? Get in touch and Dr Kelly's team will help guide you.</p>
       <div style="display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;">
-        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="background: #5E98B6; color: #FFFFFF; padding: 17px 36px; border-radius: 2px; font-size: 15px; font-weight: 600;" style-hover="background: #4d84a0;">Book Appointment</a>
-        <a href="./Homepage.dc.html#final-cta" style="color: #FFFFFF; padding: 17px 8px; font-size: 15px; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.35);">Contact the Practice</a>
+        <a href="{{ hotdocUrl }}" target="_blank" rel="noopener" style="background: #AD8A54; color: #16263A; padding: 17px 38px; font-size: 14.5px; font-weight: 600;" style-hover="background: #E7D9BE;">Book Appointment</a>
+        <a href="./Homepage Concept 2.dc.html#final-cta" style="color: #FBF8F2; padding: 17px 8px; font-size: 14.5px; font-weight: 600; border-bottom: 1px solid rgba(251,248,242,0.4);">Contact the Practice</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer style="background: #1a2327; padding: {{ footerPadding }};">
-    <div style="max-width: 1280px; margin: 0 auto;">
-      <div style="display: grid; grid-template-columns: {{ footerGridCols }}; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+  <footer style="background: #101C2B; padding: {{ footerPadding }};">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: {{ footerGridCols }}; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(251,248,242,0.1);">
         <div>
           <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
-            <svg width="30" height="30" viewBox="0 0 48 48" fill="none">
-              <rect x="20" y="5" width="8" height="38" rx="4" fill="#5E98B6"></rect>
-              <path d="M5 24 C 11 13, 17 35, 24 24 C 31 13, 37 35, 43 24" stroke="#BFD9E2" stroke-width="7" stroke-linecap="round" fill="none"></path>
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="18.5" stroke="#AD8A54" stroke-width="1.4"></circle>
+              <path d="M12 21c0-6.5 4-11 8-11s8 4.5 8 11-4 11-8 11" stroke="#FBF8F2" stroke-width="2" stroke-linecap="round" fill="none"></path>
             </svg>
-            <span style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: #FFFFFF;">Dr Sharon Kelly</span>
+            <span style="font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; font-weight: 600; color: #FBF8F2;">Sharon Kelly</span>
           </div>
-          <p style="font-size: 13.5px; line-height: 1.7; color: #9AAAB0; max-width: 260px; margin: 0;">Ear, Nose and Throat Specialist Surgeon, providing specialist ENT care across Brisbane for over twenty years.</p>
+          <p style="font-size: 13.5px; line-height: 1.7; color: #8A8578; max-width: 260px; margin: 0;">Ear, Nose and Throat Specialist Surgeon, providing specialist ENT care across Brisbane for over twenty years.</p>
         </div>
         <div>
-          <div style="font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #6C848B; font-weight: 600; margin-bottom: 20px;">Explore</div>
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6558; font-weight: 600; margin-bottom: 20px;">Explore</div>
           <div style="display: flex; flex-direction: column; gap: 12px;">
             <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
-              <a href="{{ item.href }}" style="font-size: 14px; color: #C7D3D6;">{{ item.label }}</a>
+              <a href="{{ item.href }}" style="font-size: 14px; color: #C7C1B4;">{{ item.label }}</a>
             </sc-for>
           </div>
         </div>
         <div>
-          <div style="font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #6C848B; font-weight: 600; margin-bottom: 20px;">Contact</div>
-          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #C7D3D6;">
-            <a href="tel:0738317866" style="color: #C7D3D6;">07 3831 7866</a>
-            <a href="mailto:admin@drsharonkellyent.com.au" style="color: #C7D3D6;">admin@drsharonkellyent.com.au</a>
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6558; font-weight: 600; margin-bottom: 20px;">Contact</div>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #C7C1B4;">
+            <a href="tel:0738317866" style="color: #C7C1B4;">07 3831 7866</a>
+            <a href="mailto:admin@drsharonkellyent.com.au" style="color: #C7C1B4;">admin@drsharonkellyent.com.au</a>
             <span>Watkins Medical Centre, Spring Hill</span>
           </div>
         </div>
         <div>
-          <div style="font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #6C848B; font-weight: 600; margin-bottom: 20px;">Recognition</div>
-          <img src="https://www.sharonkelly-ent.com/media/jchhivd5/fracslogo.jpg" alt="Fellow of the Royal Australasian College of Surgeons" style="height: 46px; width: auto; background: #FFFFFF; padding: 6px 10px; border-radius: 2px;">
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6558; font-weight: 600; margin-bottom: 20px;">Recognition</div>
+          <img src="https://www.sharonkelly-ent.com/media/jchhivd5/fracslogo.jpg" alt="Fellow of the Royal Australasian College of Surgeons" style="height: 46px; width: auto; background: #FBF8F2; padding: 6px 10px;">
         </div>
       </div>
       <div style="padding-top: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-        <span style="font-size: 12.5px; color: #6C848B;">© 2026 Dr Sharon Kelly. All rights reserved.</span>
+        <span style="font-size: 12.5px; color: #6B6558;">© 2026 Dr Sharon Kelly. All rights reserved.</span>
         <div style="display: flex; gap: 24px;">
-          <a href="#" style="font-size: 12.5px; color: #6C848B;">Terms</a>
-          <a href="#" style="font-size: 12.5px; color: #6C848B;">Privacy</a>
-          <a href="#" style="font-size: 12.5px; color: #6C848B;">Disclaimer</a>
+          <a href="#" style="font-size: 12.5px; color: #6B6558;">Terms</a>
+          <a href="#" style="font-size: 12.5px; color: #6B6558;">Privacy</a>
+          <a href="#" style="font-size: 12.5px; color: #6B6558;">Disclaimer</a>
         </div>
       </div>
     </div>
   </footer>
 
 </div>
-
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { windowWidth: typeof window !== "undefined" ? window.innerWidth : 1280, mobileMenuOpen: false, megaOpen: false };
+  state = { windowWidth: typeof window !== "undefined" ? window.innerWidth : 1320, mobileMenuOpen: false, megaOpen: false };
 
   componentDidMount() {
     this.handleResize = () => this.setState({ windowWidth: window.innerWidth });
@@ -270,18 +269,17 @@ class Component extends DCLogic {
     const megaBackdropOpacity = megaOpenState ? 1 : 0;
     const megaChevronTransform = megaOpenState ? "rotate(180deg)" : "rotate(0deg)";
 
-    const linkProc = (name, href) => ({ label: name, href: href || "./Conditions and Treatments.dc.html" });
+    const linkProc = (name, href) => ({ label: name, href: href || "./Conditions and Treatments Concept 2.dc.html" });
     const megaCategories = [
-      { title: "Ear", href: "./Conditions and Treatments.dc.html#ear", items: [linkProc("Grommets", "./Grommets.dc.html"), linkProc("Mastoidectomy"), linkProc("Myringoplasty")] },
-      { title: "Nose & Sinus", href: "./Conditions and Treatments.dc.html#nose-sinus", items: [linkProc("Functional Endoscopic Sinus Surgery"), linkProc("Septoplasty"), linkProc("Turbinate Reduction")] },
-      { title: "Throat", href: "./Conditions and Treatments.dc.html#throat", items: [linkProc("Tonsillectomy"), linkProc("UPPP Sleep Surgery")] },
-      { title: "Head & Neck", href: "./Conditions and Treatments.dc.html#head-neck", items: [linkProc("Parotidectomy"), linkProc("Salivary Gland Surgery")] },
-      { title: "Paediatric ENT", href: "./Conditions and Treatments.dc.html#paediatric", items: [linkProc("Adenotonsillectomy"), linkProc("Grommets", "./Grommets.dc.html"), linkProc("Tonsillectomy")] }
+      { title: "Ear", href: "./Conditions and Treatments Concept 2.dc.html#ear", items: [linkProc("Grommets", "./Grommets Concept 2.dc.html"), linkProc("Mastoidectomy"), linkProc("Myringoplasty")] },
+      { title: "Nose & Sinus", href: "./Conditions and Treatments Concept 2.dc.html#nose-sinus", items: [linkProc("Functional Endoscopic Sinus Surgery"), linkProc("Septoplasty"), linkProc("Turbinate Reduction")] },
+      { title: "Throat", href: "./Conditions and Treatments Concept 2.dc.html#throat", items: [linkProc("Tonsillectomy"), linkProc("UPPP Sleep Surgery")] },
+      { title: "Head & Neck", href: "./Conditions and Treatments Concept 2.dc.html#head-neck", items: [linkProc("Parotidectomy"), linkProc("Salivary Gland Surgery")] },
+      { title: "Paediatric ENT", href: "./Conditions and Treatments Concept 2.dc.html#paediatric", items: [linkProc("Adenotonsillectomy"), linkProc("Grommets", "./Grommets Concept 2.dc.html"), linkProc("Tonsillectomy")] }
     ];
 
     const topBarSidePad = isMobile ? "20px" : "32px";
     const topBarEmailDisplay = isMobile ? "none" : "inline";
-    const topBarReferDisplay = isMobile ? "none" : "inline";
     const headerPadding = isMobile ? "14px 20px" : "16px 32px";
     const headerCtaDisplay = isMobile ? "none" : "inline-block";
     const navDisplay = isCompactNav ? "none" : "flex";
@@ -311,61 +309,56 @@ class Component extends DCLogic {
     const footerPadding = isMobile ? "48px 20px 24px" : "64px 32px 32px";
 
     const navItems = [
-      { label: "About Dr Kelly", href: "./Homepage.dc.html#about", color: "#263238" },
-      { label: "Conditions & Treatments", href: "./Conditions and Treatments.dc.html", color: "#1F6D78" },
-      { label: "Patient Information", href: "./Homepage.dc.html#faq", color: "#263238" },
-      { label: "Locations", href: "./Homepage.dc.html#locations", color: "#263238" },
-      { label: "Contact", href: "./Homepage.dc.html#final-cta", color: "#263238" }
+      { label: "About Dr Kelly", href: "./Homepage Concept 2.dc.html#about" },
+      { label: "Conditions & Treatments", href: "./Conditions and Treatments Concept 2.dc.html" },
+      { label: "Patient Information", href: "./Homepage Concept 2.dc.html#faq" },
+      { label: "Locations", href: "./Homepage Concept 2.dc.html#locations" },
+      { label: "Contact", href: "./Homepage Concept 2.dc.html#final-cta" }
     ];
     const megaNavItems = navItems.map((item, i) => ({ ...item, delay: (i * 60) + "ms" }));
 
-    const proc = (name, href) => ({ name, href: href || "#", hasLink: !!href, textColor: href ? "#263238" : "#8A9AA0" });
+    const proc = (name, href) => ({ name, href: href || "#", hasLink: !!href, textColor: href ? "#24282D" : "#9A9488" });
 
     const categories = [
       {
         title: "Ear",
         slug: "ear",
-        bg: "#FFFFFF",
-        slotId: "cat-ear",
-        imagePlaceholder: "Ear condition image",
+        bg: "#FBF8F2",
+        image: "uploads/s2 (1).jpg",
         conditions: ["Ear infections", "Hearing loss", "Eardrum perforation", "Tinnitus", "Bone anchored hearing aids"],
-        procedures: [proc("Grommets", "./Grommets.dc.html"), proc("Mastoidectomy"), proc("Myringoplasty")]
+        procedures: [proc("Grommets", "./Grommets Concept 2.dc.html"), proc("Mastoidectomy"), proc("Myringoplasty")]
       },
       {
         title: "Nose & Sinus",
         slug: "nose-sinus",
-        bg: "#F6F9FA",
-        slotId: "cat-nose",
-        imagePlaceholder: "Nose & sinus image",
+        bg: "#F1ECE1",
+        image: "uploads/uri_ifs___M_StjVAVBUCcEcxQuMLRIHbZ-65Z858plOBV4-pOXBEtY.jpg",
         conditions: ["Sinusitis and nasal allergies", "Nasal injuries and deformities", "Blocked nose and allergies", "Nose bleeds"],
         procedures: [proc("Functional Endoscopic Sinus Surgery"), proc("Septoplasty"), proc("Turbinate Reduction")]
       },
       {
         title: "Throat",
         slug: "throat",
-        bg: "#FFFFFF",
-        slotId: "cat-throat",
-        imagePlaceholder: "Throat condition image",
+        bg: "#FBF8F2",
+        image: "uploads/uri_ifs___M_LV7OT1ytb6u4dafr6PSwxZ8bOOlIgbgmSO6tIbHMexM.jpg",
         conditions: ["Tonsillitis and other causes of sore throat", "Voice, larynx and swallowing problems", "Snoring and sleep apnoea"],
         procedures: [proc("Tonsillectomy"), proc("Uvulopalatopharyngoplasty (UPPP) Sleep Surgery")]
       },
       {
         title: "Head & Neck",
         slug: "head-neck",
-        bg: "#F6F9FA",
-        slotId: "cat-headneck",
-        imagePlaceholder: "Head & neck image",
+        bg: "#F1ECE1",
+        image: "uploads/images-9.jpg",
         conditions: ["Cancer involving the throat, mouth or nose", "Stones in the submandibular or parotid ducts", "Infection and tumours of the salivary glands"],
         procedures: [proc("Parotidectomy"), proc("Salivary Gland Surgery")]
       },
       {
         title: "Paediatric ENT",
         slug: "paediatric",
-        bg: "#FFFFFF",
-        slotId: "cat-paediatric",
-        imagePlaceholder: "Paediatric ENT image",
+        bg: "#FBF8F2",
+        image: "uploads/images-5.jpg",
         conditions: ["Tonsillitis and adenoids", "Ear infections", "Eardrum perforation", "Blocked nose and allergies", "Prominent ears", "Nose bleeds", "Snoring", "Tongue tie"],
-        procedures: [proc("Adenotonsillectomy"), proc("Grommets", "./Grommets.dc.html"), proc("Tonsillectomy"), proc("Turbinate Reduction")]
+        procedures: [proc("Adenotonsillectomy"), proc("Grommets", "./Grommets Concept 2.dc.html"), proc("Tonsillectomy"), proc("Turbinate Reduction")]
       }
     ];
 
@@ -386,7 +379,6 @@ class Component extends DCLogic {
       megaCategories,
       topBarSidePad,
       topBarEmailDisplay,
-      topBarReferDisplay,
       headerPadding,
       headerCtaDisplay,
       navDisplay,
