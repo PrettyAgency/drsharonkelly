@@ -1,0 +1,110 @@
+# The Studio Forest Hill — Contact Form API
+
+A small, self-contained ASP.NET Core 8 API that receives the website's enquiry
+form, blocks spam, logs every submission, and sends two emails via your SMTP
+relay: a branded thank-you to the customer, and an internal notification to
+your team.
+
+No external NuGet packages required (uses the framework's built-in SMTP
+client), so it publishes and runs on a clean Windows Server 2022 / IIS 10 box
+with just the .NET 8 Hosting Bundle installed.
+
+## What it does
+
+1. **Honeypot** — an invisible field only bots fill in. If it's filled, the
+   request is silently accepted (so the bot gets no signal) but never emailed.
+2. **Time-trap** — rejects submissions completed suspiciously fast (< 2s from
+   page load), a classic bot tell.
+3. **Google reCAPTCHA v2** (checkbox) — verified server-side against Google.
+4. **Rate limiting** — max N submissions per IP per rolling window (both
+   configurable), in-memory, no database needed.
+5. **Logging** — every submission (accepted, blocked, or failed) is appended
+   as one line to a local text file (`App_Data/enquiry-log.txt` by default).
+6. **Emails via your SMTP relay:**
+   - **Thank-you email** to the person who submitted the form (branded,
+     `EmailTemplates/ThankYou.html`).
+   - **Workflow notification** to your internal team (`EmailTemplates/Workflow.html`),
+     sent to everyone listed in `appsettings.json → Notifications.WorkflowRecipients`
+     — add or remove people there, no code change needed. `brett.s@pretty.com.au`
+     is included by default.
+
+## Configure (`appsettings.json`)
+
+Fill these in before deploying:
+
+- **`Smtp`** — your relay's host/port/username/password and the From address.
+- **`Recaptcha.SecretKey`** — the **server-side secret key** from your Google
+  reCAPTCHA v2 (checkbox) site registration. (The **public site key** goes on
+  the *website*, not here — see below.)
+- **`Notifications.WorkflowRecipients`** — who gets the "new enquiry" email.
+- **`RateLimiting`** — tune if 5 per 10 minutes per IP is too strict/loose.
+- **`AllowedOrigins`** — only needed if the static site and this API are
+  hosted on different origins/domains; leave as-is if they share a domain.
+
+**Never commit real secrets to source control.** For production, prefer
+Windows environment variables or IIS's "Configuration Editor" (encrypted)
+over editing the plaintext `appsettings.json` directly, e.g.:
+`Smtp__Password`, `Recaptcha__SecretKey` as environment variables override
+the file automatically (standard ASP.NET Core configuration behaviour).
+
+## Deploy to IIS (Windows Server 2022)
+
+1. Install the **.NET 8.0 Hosting Bundle** on the server (includes the
+   ASP.NET Core Module for IIS) — restart IIS afterwards (`iisreset`).
+2. From this project folder, publish it:
+   ```
+   dotnet publish -c Release -o C:\inetpub\Sites\StudioContactApi
+   ```
+3. In **IIS Manager**, create a new site (or an Application under your
+   existing static site) pointed at that publish folder.
+   - **Application Pool → .NET CLR version: No Managed Code** (Umbraco/.NET
+     Core hosts itself out-of-process via the bundle).
+4. Grant the app pool identity (`IIS AppPool\<name>`) **Modify** rights on
+   the publish folder (it needs to write `App_Data/enquiry-log.txt` and
+   `logs/stdout*.log`).
+5. Create the `App_Data` folder if it doesn't already exist after publish.
+6. Browse to `https://your-domain/api/health` — you should see
+   `{"status":"ok", ...}`.
+
+If it's an **Application** under the static site (e.g. static site at `/`,
+API at `/api`), the front-end's default `formEndpoint` of `/api/enquiry`
+works with no further configuration.
+
+## Wire up the website
+
+The website (`The Studio - Editorial.dc.html` and the master file) already
+POST to this endpoint and render the reCAPTCHA widget — just fill in two
+values in the site's **Tweaks** panel (or its `data-props`):
+
+- **`recaptchaSiteKey`** — the **public site key** from Google reCAPTCHA v2.
+- **`formEndpoint`** — defaults to `/api/enquiry`; change it if the API is
+  hosted at a different path or domain.
+
+Until a site key is set, the form still submits (recaptcha check is skipped
+client-side) — set `Recaptcha.MinimumRequired: true` server-side once you've
+gone live with a real key so the server enforces it even if someone tampers
+with the front end.
+
+## Testing locally
+
+```
+cd studio-contact-api
+dotnet run
+```
+Then POST to `http://localhost:5000/api/enquiry` (or whatever port `dotnet run`
+prints) with a JSON body matching the front-end's payload. In
+`appsettings.Development.json`, `Recaptcha.MinimumRequired` is `false` so you
+can test without a live key.
+
+## Notes / things to revisit later
+
+- `System.Net.Mail.SmtpClient` is functionally fine and needs zero extra
+  packages, but Microsoft has flagged it as legacy. If you want the
+  more actively maintained option, swap in **MailKit** — the public
+  `EmailSender.SendThankYouAsync` / `SendWorkflowAsync` methods can stay
+  the same shape.
+- The rate limiter is in-memory and per-instance. Fine for a single IIS
+  instance; if this ever scales to multiple servers/load balancing, move
+  it to a shared store.
+- Consider rotating `App_Data/enquiry-log.txt` (e.g. a scheduled task) if
+  enquiry volume is high, so the file doesn't grow unbounded.
