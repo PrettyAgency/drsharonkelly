@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; -webkit-font-smoothing: antialiased; }
+    a { color: #16263A; text-decoration: none; }
+    a:hover { color: #AD8A54; }
+    ::selection { background: #E7D9BE; }
+    @media print { .no-print { display: none !important; } }
+  </style>
+</helmet>
+
+<div style="font-family: 'Work Sans', sans-serif; color: #24282D; background: #FBF8F2; width: 100%; overflow-x: hidden;">
+
+  <header class="no-print" style="position: sticky; top: 0; z-index: 40; background: rgba(251,248,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(22,38,58,0.12);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: {{ headerPadding }}; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="./index.dc.html" style="display: flex; align-items: center; gap: 13px;">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18.5" stroke="#AD8A54" stroke-width="1.4"></circle>
+          <path d="M12 21c0-6.5 4-11 8-11s8 4.5 8 11-4 11-8 11" stroke="#16263A" stroke-width="2" stroke-linecap="round" fill="none"></path>
+        </svg>
+        <span>
+          <span style="display: block; font-family: 'Newsreader', serif; font-size: 19px; font-weight: 600; color: #16263A; line-height: 1;">Sharon Kelly</span>
+          <span style="display: block; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-top: 2px;">ENT Surgeon, Brisbane</span>
+        </span>
+      </a>
+      <button onclick="{{ printPage }}" style="background: #16263A; color: #FBF8F2; border: none; padding: 12px 26px; font-family: 'Work Sans', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer; white-space: nowrap;" style-hover="background: #AD8A54; color: #16263A;">Print This Page</button>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section style="background: #F1ECE1; padding: {{ pageHeaderPadding }};">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div class="no-print" style="font-size: 13px; margin-bottom: 22px;">
+        <a href="./index.dc.html" style="color: #AD8A54;">Home</a>
+        <span style="color: #9A9488; padding: 0 8px;">/</span>
+        <a href="./grommets.dc.html" style="color: #AD8A54;">Grommets</a>
+        <span style="color: #9A9488; padding: 0 8px;">/</span>
+        <span style="color: #24282D;">Post-Operative Care</span>
+      </div>
+      <div style="font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #AD8A54; font-weight: 600; margin-bottom: 18px;">Aftercare Guide</div>
+      <h1 style="font-family: 'Newsreader', serif; font-size: {{ h1Size }}; font-weight: 500; margin: 0 0 20px; line-height: 1.15; color: #16263A;">Post-Operative Care — Grommets</h1>
+      <p style="font-size: 17px; line-height: 1.75; color: #55524B; max-width: 620px; margin: 0;">Post-operative care for grommets involves keeping the ears dry — especially for the first week or two — to prevent infection, and managing mild pain with over-the-counter medication. Please follow Dr Kelly's instructions regarding antibiotic drops; some minor discharge or bleeding initially is expected, and normal activities can resume after a few days.</p>
+    </div>
+  </section>
+
+  <!-- INSTRUCTIONS -->
+  <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="4">
+    <section style="padding: {{ sectionPadding }}; background: {{ cat.bg }};">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <h2 style="font-family: 'Newsreader', serif; font-size: {{ h2Size }}; font-weight: 600; margin: 0 0 24px; color: #16263A;">{{ cat.title }}</h2>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="3">
+            <div style="display: flex; gap: 14px; align-items: flex-start; background: #FBF8F2; padding: 18px 22px; border-left: 2px solid #AD8A54;">
+              <span style="font-size: 15px; line-height: 1.7; color: #24282D;"><strong style="color: #16263A;">{{ item.label }}:</strong> {{ item.body }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-for>
+
+  <!-- WHEN TO SEEK HELP -->
+  <section style="background: #16263A; padding: {{ sectionPadding }};">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <h2 style="font-family: 'Newsreader', serif; font-size: {{ h2Size }}; font-weight: 600; margin: 0 0 24px; color: #FBF8F2;">When to Contact Your Doctor or Seek Emergency Care</h2>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <sc-for list="{{ warningSigns }}" as="w" hint-placeholder-count="3">
+          <div style="display: flex; gap: 14px; align-items: flex-start; background: rgba(251,248,242,0.06); padding: 16px 20px; border-left: 2px solid #AD8A54;">
+            <span style="font-size: 15px; line-height: 1.6; color: #FBF8F2;">{{ w }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="no-print" style="padding: {{ sectionPadding }}; background: #F1ECE1; text-align: center;">
+    <div style="max-width: 560px; margin: 0 auto;">
+      <h2 style="font-family: 'Newsreader', serif; font-size: {{ ctaHeadingSize }}; font-weight: 500; margin: 0 0 18px; color: #16263A;">Questions about your recovery?</h2>
+      <p style="font-size: 15.5px; line-height: 1.7; color: #55524B; margin: 0 0 32px;">Our team is available to help during business hours.</p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;">
+        <a href="tel:0738317866" style="background: #16263A; color: #FBF8F2; padding: 16px 34px; font-size: 14.5px; font-weight: 600;" style-hover="background: #AD8A54; color: #16263A;">Call 07 3831 7866</a>
+        <a href="./grommets.dc.html" style="color: #16263A; padding: 16px 8px; font-size: 14.5px; font-weight: 600; border-bottom: 1px solid #AD8A54;">← Back to Grommets</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="no-print" style="background: #101C2B; padding: {{ footerPadding }}; text-align: center;">
+    <div style="max-width: 1320px; margin: 0 auto; font-size: 12.5px; color: #6B6558;">© 2026 Dr Sharon Kelly. All rights reserved.</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { windowWidth: typeof window !== "undefined" ? window.innerWidth : 1320 };
+
+  componentDidMount() {
+    this.handleResize = () => this.setState({ windowWidth: window.innerWidth });
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
+  renderVals() {
+    const w = this.state.windowWidth;
+    const isMobile = w < 640;
+    const isNarrow = w < 900;
+
+    const printPage = () => window.print();
+
+    const categories = [
+      {
+        title: "Immediate and First Few Days",
+        bg: "#FBF8F2",
+        items: [
+          { label: "Pain", body: "Some discomfort is expected, often relieved by paracetamol or ibuprofen." },
+          { label: "Discharge", body: "It is normal to have a small amount of blood or clear fluid discharge from the ear for the first 1–2 days." },
+          { label: "Activity", body: "Your child may feel drowsy from the anaesthetic for up to 24 hours. Avoid swimming or putting your head underwater during this time. Rigorous activity should be avoided for the first 72 hours." },
+          { label: "Food", body: "Start with light refreshments. Nausea is possible after anaesthesia, so small, light meals are best initially." }
+        ]
+      },
+      {
+        title: "Keeping Ears Dry",
+        bg: "#F1ECE1",
+        items: [
+          { label: "Showering", body: "You can shower but avoid getting water in the ears." },
+          { label: "Bathing", body: "Avoid submerging your head in the bath." },
+          { label: "Swimming", body: "Do not swim until your first post-operative appointment. After that, use earplugs and a swimming cap." }
+        ]
+      },
+      {
+        title: "When to Use Medication",
+        bg: "#FBF8F2",
+        items: [
+          { label: "Antibiotic drops", body: "Use as prescribed by your doctor to prevent infection and treat discharge." },
+          { label: "Ear infection", body: "If discharge (especially pus) continues for more than 24 hours after the first few days, contact your GP for a prescription of antibiotic drops. Oral antibiotics are generally not effective for a discharging grommet." }
+        ]
+      },
+      {
+        title: "Long-Term Care and Follow-up",
+        bg: "#F1ECE1",
+        items: [
+          { label: "Activity", body: "After the first few days, normal activity can resume." },
+          { label: "Swimming", body: "After your post-operative check, you can usually resume swimming with earplugs and a swimming cap." },
+          { label: "Grommet extrusion", body: "Grommets typically fall out on their own within 6 to 12 months." },
+          { label: "Follow-up appointments", body: "A post-operative appointment is usually scheduled around 3–4 weeks after surgery, followed by check-ups every 6 months to monitor the grommets." }
+        ]
+      }
+    ];
+
+    const warningSigns = [
+      "Discharge: if discharge is profuse, continues for more than a week, or you are concerned, contact Dr Kelly's rooms on 07 3831 7866",
+      "Hearing: if hearing has not improved, contact your doctor or Dr Kelly's rooms",
+      "For serious issues like severe bleeding, prolonged vomiting, or drowsiness, go directly to the emergency department of the hospital where the operation was performed"
+    ];
+
+    return {
+      printPage, categories, warningSigns,
+      headerPadding: isMobile ? "14px 20px" : "16px 32px",
+      pageHeaderPadding: isMobile ? "44px 20px 40px" : "68px 32px 56px",
+      h1Size: isMobile ? "32px" : "44px",
+      h2Size: isMobile ? "24px" : "28px",
+      ctaHeadingSize: isMobile ? "24px" : "28px",
+      sectionPadding: isMobile ? "48px 20px" : "72px 32px",
+      instructionGrid: isNarrow ? "1fr" : "220px 1fr",
+      footerPadding: isMobile ? "32px 20px" : "40px 32px"
+    };
+  }
+}
+</script>
+</body>
+</html>
